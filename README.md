@@ -131,14 +131,14 @@ The project has been organised as follows:
 
 - $\color{orange}{Chapter 6}$ – Evaluation, Reflections and Conclusions chapter evaluates the project as a whole, examining the objectives, literature, methods, and planning, while also providing information about the implications and potential future work based on the existing foundation.
 
-<sub>[[Top 🢁](#experimental-performance-evaluation-of-data-distribution-service-software)]</sub>
+<sub>[[Top 🢁](#contents)]</sub>
 
 ## 2 Context
 ### 2.1 Data Distribution Service
 #### 2.1.1 What is “Data Distribution Service"?
 [Sim, W., Song, B., Shin, J. and Kim, T. (2021, p. 1)](https://www.mdpi.com/2079-9292/10/20/2524) defined the Data Distribution Service (DDS) to be a “standard in the publish–subscribe form” as well as the “data-centric middleware”. In the same way both of these definition are supported by the application programming interfaces of the providers in a way consistent with a purpose of serving as a standards for time and task-critical applications. The same context can be understood by looking at elementary, common mechanism in the society, being a subscriber to a newsletter. The only drawback in this comparison would be the potential consequence of subscribers not receiving requested information, as with this technology, it may lead to unfavourable outcomes. According to the DDS-Foundation, in a distributed system, there is a need for the middleware in the whole software architecture that would be a link between the operating system and applications [(DDS Foundation, 2023)](https://www.dds-foundation.org/what-is-dds-3/). The result of middleware taking this role is to allow easier communication and data sharing as well as taking accountability from the software developers to allow them save time on information passing between the systems and application. 
 
-The idea had the potential to function as it was highly supported by implementation technologies, while discarding the low-level details that would act as obstacles according to quote provided by [Object Management Group (DDS Foundation, 2023)](https://www.dds-foundation.org/what-is-dds-3/) “abstracts the Application from the details of the operating system, network transport, and low-level data formats. The same concepts and APIs are provided in different programming languages allowing applications to exchange information across operating systems, languages, and processor architectures”. The analogy mentioned before explains the further concepts that complements entire specification, as there is a publisher, subscriber, global data space, topic, data reader, data writer and QoS (Quality of Service). Naturally, when person subscribes to a newsletter, there should <img src="img/Figure2.jpg" height="250" width="410" align="left" style="margin-right:15px; margin-bottom:5px; border: 5px solid #181414"/> be a possibility to access a space where the information (topic) of interest, is available and follows predefined quality standards. As the person accesses the data, the role within is to read data, while publisher sending the newsletter writes data to the space of general access that then is observed by viewer. <img src="img/DDS.jpg" height="310" width="280" align="right" style="margin-left:15px; margin-bottom:5px; border: 5px solid #181414" /> In accordance with what is published about DDS, there are many topics that can appear in the domain, and all of them are shareable across many subscribers while it may happen that some are not of anyone’s interest.  All of the above ideas are shared in most definitions, however, they may add extra details which offer deeper functionalities, such as a filter (see Figure 1) where only a subset of data inside the topics is published or when the reader wants to have a view of a chunk of information available under a topic. According to Woongbin, there is a possibility to accept both roles where participant is split between being a reader and publisher in the global space with multiple “data writers” or “data readers” (see Figure 2). 
+The idea had the potential to function as it was highly supported by implementation technologies, while discarding the low-level details that would act as obstacles according to quote provided by [Object Management Group (DDS Foundation, 2023)](https://www.dds-foundation.org/what-is-dds-3/) “abstracts the Application from the details of the operating system, network transport, and low-level data formats. The same concepts and APIs are provided in different programming languages allowing applications to exchange information across operating systems, languages, and processor architectures”. The analogy mentioned before explains the further concepts that complements entire specification, as there is a publisher, subscriber, global data space, topic, data reader, data writer and QoS (Quality of Service). Naturally, when person subscribes to a newsletter, there should <img src="img/Figure2.jpg" height="250" width="410" align="left" style="margin-right:15px; margin-bottom:5px; border: 5px solid #181414"/> be a possibility to access a space where the information (topic) of interest, is available and follows predefined quality standards. As the person accesses the data, the role within is to read data, while publisher sending the newsletter writes data to the space of general access that then is observed by viewer. <img src="img/DDS.jpg" height="310" width="280" align="right" style="margin-left:15px; margin-bottom:5px; border: 5px solid #181414" /> In accordance with what is published about DDS, there are many topics that can appear in the domain, and all of them are shareable across many subscribers while it may happen that some are not of anyone’s interest.  All of the above ideas are shared in most definitions, however, they may add extra details which offer deeper functionalities, such as a filter (see Figure 1) where only a subset of data inside the topics is published or when the reader wants to have a view of a chunk of information available under a topic. According to Woongbin, there is a possibility to accept both roles where participant is split between being a reader and publisher in the global space with multiple “$\color{white}{data \ writers}$” or “$\color{white}{data \ readers}$” (see Figure 2). 
 
 #### 2.1.2 OMG Data Distribution Service specification
 To expand upon the definition of Data Distribution Service, it is worth examining the comprehensive and detailed specification provided by the pioneer in the development and definition of this technology, which is the Object Management Group (OMG).
@@ -175,7 +175,7 @@ There exist many articles or dedicated documentation about the performance in re
 
 Secondly, there exists a research gap that could outline, or at least lead to, new conclusions or informed decisions when considering the utilization of such technology. It can be argued that no research paper would make a qualitative comparison between at least two solutions and showcase the results in a more advanced and detailed fashion. Here, both numerical and graphical data will be present together with analysis, proceeding findings, and conclusions.
 
-<sub>[[Top 🢁](#experimental-performance-evaluation-of-data-distribution-service-software)]</sub>
+<sub>[[Top 🢁](#contents)]</sub>
 
 ### 2.2 Alternative architectures
 #### 2.2.1 Message-oriented middleware
@@ -189,7 +189,7 @@ Besides, the second middleware solution responds directly to the Remote Procedur
 #### 2.2.3 Transactional middleware
 Lastly, there is a middleware that functions more than an exclusive extension to some other middleware. The function of this technology is about transactions going through multiple hosts. According to Robert Nunn, there needs to be assurance that the operation will happen either on all of the system’s hosts or on none of them to support consistency. To make sure that this happens, a two-phase commit protocol is implemented. In simple terms, the first phase is designed to ensure that all nodes can confirm whether they can submit or not. The second phase involves committing to the transaction if they are ready, based on what was established previously. In summary, it allows the database to integrate into the state of the management system, and vice versa. While it allows both synchronous and asynchronous communication, it is often the case that the middleware is overhead due to the focus on making transactions precise and in accordance with desired outcomes. The major issue with this technique arises in situations where one transaction can halt other transactions, and the time taken rises accordingly with the complexity of the blocking transaction. As explained by these points, it seems that there are advantages to using this middleware for transactions with competent precision, but the issues may accumulate with complexity and user needs. 
 
-<sub>[[Top 🢁](#experimental-performance-evaluation-of-data-distribution-service-software)]</sub>
+<sub>[[Top 🢁](#contents)]</sub>
 
 ### 2.3 Distributed systems performance measures
 #### 2.3.1 Latency 
@@ -198,11 +198,11 @@ The basic understanding of the delay during the travel of data packets from the 
 #### 2.3.2 Throughput 
 The measure of throughput was identified by [John Burke (2022)](https://www.techtarget.com/searchnetworking/definition/throughput) as how many units of data the system can process in a specific period (also referred to as the processing of data through a channel). The definition of this concept was already in place in the mid-20th century when the first data communication was developed. The context in which throughput was highly encountered by engineers and computer scientists was the processing of data at specific rates, as it was the main concern to optimize speed and make the system reliable. Network throughput, as the amount of data moved from one destination to another in usually one second, is measured using bits per second (bps) and can expand to megabits per second (Mbps) or gigabits per second (Gbps). An important note is that the difference between throughput and bandwidth can be shortened to relations such that throughput is the amount of data while bandwidth is the capacity of the network for that data (moved once). 
 
-<sub>[[Top 🢁](#experimental-performance-evaluation-of-data-distribution-service-software)]</sub>
+<sub>[[Top 🢁](#contents)]</sub>
 
 ### 2.4 State-of-the-art in performance assessment of DDS
 #### 2.4.1 Real-Time Innovations performance testing guide
-To gain insights into the performance of our DDS, the testing campaign team must adhere to predefined procedures and have a well-prepared plan to obtain values that are both realistic and answer to the constraints of the environment. With such a demeanour, the values will become understandable under their conditions and truthful to what could be obtained in the best case. Real-Time Innovations has outlined that a team of people performing the test may not be fully aware of what they are indeed looking for, as their understanding may not correspond to the correct definition. An example of the misconstrued definition they believe is “fast,” as the performance is directly affected by the real world working with the system. The word mentioned comes in two measurements, which are often of equal importance (however, some may favour one over the other), and they are throughput and latency. Throughout may look like “shall handle M thousand Ys per second,” while latency can be taken as “shall do X functionality in N milliseconds” [(Real-Time Innovations, p. 1, 2021)](https://www.rti.com/hubfs/_Collateral/Whitepapers/connext-performance-benchmarks.pdf), and the combination of both results in loaded latency. As they are precisely defined, this understanding is valuable, as we can take it and be more likely to come across a certain system with deterministic behaviour. 
+To gain insights into the performance of our DDS, the testing campaign team must adhere to predefined procedures and have a well-prepared plan to obtain values that are both realistic and answer to the constraints of the environment. With such a demeanour, the values will become understandable under their conditions and truthful to what could be obtained in the best case. Real-Time Innovations has outlined that a team of people performing the test may not be fully aware of what they are indeed looking for, as their understanding may not correspond to the correct definition. An example of the misconstrued definition they believe is “fast,” as the performance is directly affected by the real world working with the system. The word mentioned comes in two measurements, which are often of equal importance (however, some may favour one over the other), and they are throughput and latency. Throughout may look like “shall handle $\color{white}{M}$ thousand $\color{white}{Ys}$ per second,” while latency can be taken as “shall do $\color{white}{X}$ functionality in $\color{white}{N}$ milliseconds” [(Real-Time Innovations, p. 1, 2021)](https://www.rti.com/hubfs/_Collateral/Whitepapers/connext-performance-benchmarks.pdf), and the combination of both results in loaded latency. As they are precisely defined, this understanding is valuable, as we can take it and be more likely to come across a certain system with deterministic behaviour. 
 
 Testing of the performance is a natural process on the finished or continuously developed product, as the potential users can identify whether the DDS product meets the functional and non-functional requirements for their time-critical or distributed system. Finding the right solution with a benchmark may seem to be a simple step, where we can plot the performance of many solutions and see which one is the best through a defined time frame. On the contrary, such a task is often "complex and non-trivial", and people often decide to look for paid support from a company that offers such services to be done in an informative and fair manner. The main issue of performing the tests on our own is the fact that based on looking for the 'best' solution, this keyword and the results described by it may not be of much value. In order to get the latency, which is relatively at the lowest point, or on the other hand, throughput that is at its peak, our system would have to sacrifice nearly all network bandwidth or CPU. In contrast, the system performing in the real environment would likely never act in the way where most of the resources are taken, but certainly, the users of the DDS want the middleware to perform better than what they factually need in their system. 
 
@@ -262,7 +262,7 @@ Third solution that had its prime from 2005 to 2008 is the DDS Benchmarking Envi
 
 At last, the open-source project DDSBench, by [Yu Sheng (2018)](https://github.com/cwyark/ddsbench ), who is an employee of PrismTech, also known as ADLINK IST, is the solution available in the open-source library written in the C language. The project has disadvantages in the form of no documentation and no continued support, finished in 2018. It follows the same principles as the previous competitors in the space, meaning that the code corresponds to the idea of communication taking place between subscribers and publishers. This can be seen by an analysis of the “throughput” and “roundtrip” portions of the code while displaying the clear steps in collecting information about latency and throughput. It is possible that the project was quite useful at the time of development and commitment to it, but at the moment, it can be associated with the main problem of being abandoned. 
 
-<sub>[[Top 🢁](#experimental-performance-evaluation-of-data-distribution-service-software)]</sub>
+<sub>[[Top 🢁](#contents)]</sub>
 
 ## 3 Methods
 Chapter outlines the methods and software tools employed throughout the project's duration for collecting, analysing, cleaning, and visualizing the information acquired from performance-related activities. It also includes the development process of the benchmarking plugin, discussing its implementation.
@@ -289,7 +289,7 @@ Command Prompt is a shell and a scripting language, which provides the command-l
 
 Shell acts on the requirements of the project by allowing:
 
--	The execution of the “.bat”, “.jar” and “.exe” scripts required to utilize the RTI Code Generator (rtiddsgen) tool to generate part of the code (see Appendix C) that is used to work with makefile/project files complication. Step of this form has to be completed before the execution of the latency and throughput testing.
+-	The execution of the “$\textcolor{yellow}{\textit{.bat}}$”, “$\textcolor{yellow}{\textit{.jar}}$” and “$\textcolor{yellow}{\textit{.exe}}$” scripts required to utilize the RTI Code Generator (rtiddsgen) tool to generate part of the code (see Appendix C) that is used to work with makefile/project files complication. Step of this form has to be completed before the execution of the latency and throughput testing.
 
 -	The use of the build script parameters provides the choice of the testing platform in a similar way to the choice of the programming language. Similarly, the custom configuration with parameters simplifies the outputs and testing procedure to look at a specific sample size range (in bytes). 
 
@@ -354,18 +354,19 @@ By suggesting that the form of performance measurements ought to be decomposed a
 #### 3.3.1 Implementation of the test harness and DDS system performance metrics in the spreadsheet
 The project was developed using RTI’s benchmarking application, together with Command Line Interface, and Microsoft Excel. The choice of software tools was backed by the fact that one supports the action of the next one; for instance, the benchmarking application can be executed via commands rather than by slower Visual Studio software. During the testing campaign that took place from the middle of August (22/08/2023) to the beginning of September (04/09/2023), the creation of the worksheet containing the data batches captured during the campaign occurred (see Appendix B).  
 
-Based on getting acquainted with the information during the “benchmark documentation reading” (see Figure 0) stage from the 20th of July, it was feasible to perform activities to make the software ready for testing. The initial step was to download the crucial component, the 'Connext DDS' installation, paired with requesting a license agreement file. Ask for this file was done via a special form on the RTI’s page and collected with the use of an email associated with the educational organization for research or other non-commercial activities under the free trial (Real-Time Innovations, 2023). Once more, it had to be accompanied by the open-source Perftest 4.1 repository download and placed into the dedicated directory for simpler navigation. These actions were associated with going through the instructional document on this web page. A sub-directory, called “Binaries”, was under the release page, where the “$\textcolor{yellow}{\textit{.zip}}$” folder was downloaded with the answer to the operating system architecture and the already-in-place installation. Compressed folder was extracted into the 'rtiperftest' directory so that each folder ranging from 'doc,' 'bin,' and 'resource' was placed there.
+Based on getting acquainted with the information during the “benchmark documentation reading” (see Figure 0) stage from the 20th of July, it was feasible to perform activities to make the software ready for testing. The initial step was to download the crucial component, the 'Connext DDS' installation, paired with requesting a license agreement file. Ask for this file was done via a special form on the RTI’s page and collected with the use of an email associated with the educational organization for research or other non-commercial activities under the free trial (Real-Time Innovations, 2023). Once more, it had to be accompanied by the open-source Perftest 4.1 repository download and placed into the dedicated directory for simpler navigation. These actions were associated with going through the instructional document on this web page. A sub-directory, called “Binaries”, was under the release page, where the “$\color{yellow}{.zip}$” folder was downloaded with the answer to the operating system architecture and the already-in-place installation. Compressed folder was extracted into the 'rtiperftest' directory so that each folder ranging from 'doc,' 'bin,' and 'resource' was placed there.
 
 As an additional context, it is worth mentioning that for the compilation to be done and executables to be used for tests it is often needed to set the appropriate variables or system paths. In this case, the actions were not limited to:
 
 1. NDDSHOME has to be set using 
 ```bash
-set NDDSHOME=directory/without/quotes/and/pointing/to/rtiperftest/rti_connext_dds-6.1.1 #Connext installation
+set NDDSHOME=directory/without/quotes/and/pointing/to/rtiperftest/rti_connext_dds-6.1.1 
+'Connext installation'
 ```
 
 2. RTI_PERFTEST_ARCH has to be set using
 ```bash
-set RTI_PERFTEST_ARCH=i86Win64VS2022 #VS2022 meaning Visual Studio installation
+set RTI_PERFTEST_ARCH=i86Win64VS2022 'VS2022 meaning Visual Studio installation'
 ```
 
 3. $\textcolor{yellow}{\textit{msbuild.exe}}$ has to be set in the system environment “Path” similarly to
@@ -378,62 +379,79 @@ set RTI_PERFTEST_ARCH=i86Win64VS2022 #VS2022 meaning Visual Studio installation
 C:\Program Files\MicrosoftVisualStudio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\Hostx64\x64
  ```
 
-As explained by the “Compilation” section [(Community Real-Time Innovations, 2022)](https://community.rti.com/static/documentation/perftest/current/compilation.html ) the “$\textcolor{yellow}{\textit{build.bat}}$” file in our directory was used to invoke the code generator, which has created the necessary code and makefiles (see Appendix C), which adhere to the architecture provided earlier. To elaborate, the script was utilized with supplementary arguments defining the specifics of the build, which were:
+As explained by the “Compilation” section [(Community Real-Time Innovations, 2022)](https://community.rti.com/static/documentation/perftest/current/compilation.html ) the “$\color{yellow}{build.bat}$” file in our directory was used to invoke the code generator, which has created the necessary code and makefiles (see Appendix C), which adhere to the architecture provided earlier. To elaborate, the script was utilized with supplementary arguments defining the specifics of the build, which were:
 
 ```bash 
--platform x64Win64VS2022 #Used to define the platform for which the script was going to compile RTI Perftest, in this case x64 based PC with Visual Studio 2022 Community edition. 
+-platform x64Win64VS2022 'Used to define the platform for which the script was going to compile
+RTI Perftest, in this case x64 based PC with Visual Studio 2022 Community edition'
 ```
 
 ```bash 
-–java-build #Was used in order to create a “.jar” file to establish sides of the communication in the test.
+–java-build 'Was used in order to create a “.jar” file to establish sides of the communication
+in the test'
 ```
 
 ```bash
-–dynamic #To make sure the dynamic libraries are included in case the test goes into the wider scope of inclusion. 
+–dynamic 'To make sure the dynamic libraries are included in case the test goes into the wider
+scope of inclusion' 
 ```
 
 ```bash
-–debug #To make sure the debug libraries are included in case of unexpected erroneous behaviour so that the configuration will point it out. 
+–debug 'To make sure the debug libraries are included in case of unexpected erroneous behaviour
+so that the configuration will point it out'
 ```
 
-Continuing the ‘$\textcolor{yellow}{\textit{.jar}}$’ file was used in the “bin/release” sub-directory to start the publisher in a separate command-line interface with the informed range of command-line parameter choices. The list of these choices is:
+Continuing the ‘$\color{yellow}{.jar}$’ file was used in the “bin/release” sub-directory to start the publisher in a separate command-line interface with the informed range of command-line parameter choices. The list of these choices is:
 
 ```bash 
--perftest_java -pub #Was used in one window to start the publisher.
-```
-
-```bash 
--noPrint #Was used to allow the potential latency test to counteract frequent printing of latency samples. In addition, printing operations incur higher costs, which could potentially impact the results, making it unfavourable for the test harnessing.
+-perftest_java -pub 'Was used in one window to start the publisher'
 ```
 
 ```bash 
--domain 337 #Was used to establish the same domain between publisher and subscriber and ensure the correct testing results are collected, as opposed to previously tried configurations. 
+-noPrint 'Was used to allow the potential latency test to counteract frequent printing
+of latency samples. In addition, printing operations incur higher costs, which could
+potentially impact the results, making it unfavourable for the test harnessing'
 ```
 
 ```bash 
--latencyCount 1000 #Represents the number of samples to be sent before the latency test ping packet is sent in the ping-pong exchange. It was used to support the assessment and measurement of the latency.
+-domain 337 'Was used to establish the same domain between publisher and subscriber and ensure
+the correct testing results are collected, as opposed to previously tried configurations' 
 ```
 
 ```bash 
--scan 32:64:128… #Allows running the tests in a scan mode where a list of sample sizes in bytes can be given. The rationale behind using it is to illustrated the behaviour of the metrics at specific intervals of sample size values. In one aspect, the approach narrows the range of values included, whereas it effectively showcases the possible phenomena and encompasses both small and large values for organised comprehensive analysis.
+-latencyCount 1000 'Represents the number of samples to be sent before the latency test ping
+packet is sent in the ping-pong exchange. It was used to support the assessment and
+measurement of the latency'
 ```
 
 ```bash 
--exec 30 #Has set the delay between each test in both the publisher and subscriber to ensure that no additional overhead occurs during test harness, safeguarding the integrity of testing and network machine. In case where the testing machine would not be able to handle tests with low delay in between, it could detrimentally impact collected metrics. 
+-scan 32:64:128… 'Allows running the tests in a scan mode where a list of sample sizes in bytes
+can be given. The rationale behind using it is to illustrated the behaviour of the metrics at
+specific intervals of sample size values. In one aspect, the approach narrows the range of
+values included, whereas it effectively showcases the possible phenomena and encompasses
+both small and large values for organised comprehensive analysis'
 ```
 
-As can be expected, the subscriber side has also used the ‘$\textcolor{yellow}{\textit{.jar}}$’ file within the same directory, but the key command-line parameters were limited to:
+```bash 
+-exec 30 'Has set the delay between each test in both the publisher and subscriber to ensure
+that no additional overhead occurs during test harness, safeguarding the integrity of
+testing and network machine. In case where the testing machine would not be able to
+handle tests with low delay in between, it could detrimentally impact collected metrics'
+```
+
+As can be expected, the subscriber side has also used the ‘$\color{yellow}{.jar}$’ file within the same directory, but the key command-line parameters were limited to:
 
 ```bash 
--perftest_java -sub #Was used in other window to start the subscriber.
+-perftest_java -sub 'Was used in other window to start the subscriber.'
 ``` 
 
 ```bash 
--noPrint #Was used in the same context as the publisher side.
+-noPrint 'Was used in the same context as the publisher side'
 ``` 
 
 ```bash 
--domain 337 #Was needed to establish connected with publisher and start the test defined by other parameters. 
+-domain 337 'Was needed to establish connected with publisher and start the test
+defined by other parameters'
 ``` 
 
 Testing commenced on a system running the Windows 10 operating system, configured with the architecture “i86Win64VS2022”, accompanied by 16 gigabytes of Random-Access Memory (RAM) and powered by an Intel Core i5-8300H CPU, operating at 2.30GHz (2304 MHz) with 4 cores and 8 logical processors. The networking machine is a router with the specification of Hub 3.0 and type VMDG505/TG2492LG-VM. With two concurrently running command-line interfaces (one publisher and one subscriber), the test was started with the defined sample size in bytes that kept the role of positive powers of two (also called binary powers) [(Exploringbinary, 2008)](https://www.exploringbinary.com/the-powers-of-two/). Therefore, the data sizes have started from 32 to up to 40 thousand, where the upper limit of 65536 was not reached due to errors causing the stoppage of the tests. They were running for a total time of 6 minutes due to setting up the delay between each data size sent, and this timing involved both the Publisher and Subscriber. Moreover, the test was halted after 6 minutes when the last data size test was done, which was the included chosen upper limit. During this time, the testing activities were done at the same period, which was the end of August (see Appendix B), to ensure that no additional network stress or any machine-related issues were going to affect the end measurements. The type of tests were in two modes: the first one was named as “THROUGHPUT TEST”, whereas the other was “LATENCY TEST (Ping-Pong test)”. Interest lies in the metrics of latency and throughput, which are the standard performance measures for computer-based systems and distributed systems. The total number of test runs was four with the security disabled feature, where half of the test was in one mode for both Publisher and Subscriber, while the other was done in the other mode. After examining the test results, there existed twelve rows of data based on the specified data size range for each entity.
@@ -449,7 +467,7 @@ The data batches have appeared based on exchange happening, which were communica
 
 The final endeavour involved collecting information using Perftest 4.1 with additional security features enabled, aiming to expand on the findings and increase the scale of the testing campaign. The process closely mirrored what was done previously, but this time, the `--secure` option, combined with `--openssl-home`, needed to be incorporated to compile the files under secure conditions using the OpenSSL libraries, essential for security testing.
 
-However, an issue arose when, after successful compilation, the execution of the Java "$\textcolor{yellow}{\textit{.bat}}$" file became impossible due to a request for the "Governance" file. Contact with the RTI team led to a solution for this problem (see Appendix G). Once this issue was resolved, another problem emerged, which remained unresolved, involving the disabling of data collection under the same configuration (see Appendix G).
+However, an issue arose when, after successful compilation, the execution of the Java "$\color{yellow}{.bat}$" file became impossible due to a request for the "Governance" file. Contact with the RTI team led to a solution for this problem (see Appendix G). Once this issue was resolved, another problem emerged, which remained unresolved, involving the disabling of data collection under the same configuration (see Appendix G).
 
 #### 3.3.2 Implementation of the test harness document for visualising DDS system performance metrics
 The technical implementation of the document, whose role is to demonstrate the graphical context of the amassed information, was created in the Jupyter Notebook. The decision to use markdown was made, similar to a professional journal commonly used in the context of data science. The introduction is included in the file to provide background information that the viewer might be interested in, along with the motives behind the work and potential stakeholders of such material. Essentially, the configurational aspects of the actions performed are included with sufficient details that allow one to understand the context and steps taken. These same details were elaborated on in the previous section.
@@ -460,7 +478,7 @@ Data cleaning activities have started with column renaming for them to work with
 
 The transformation of the columns started with changing their characteristics from column to arranged NumPy array and removal of the not available values caused by this action. Beforehand, new values were added to change the range of values displayed in one type of graph. Smallest and highest values were usually removed in the amount of one up to three to complete the idea of zoomed-in graphs next to the original graph with a full range of data points. Only one exception appeared in the second test of latency where the highest anomalous outlier was removed so that the viewer could see the difference between the original and zoomed-in plot.
 
-Essence of the data points was based on the ‘x’ and ‘y’ axis, meaning that the number of plots in the document was limited to scatter plots or just simple line plots where each data point was connected via a link. The convergence was that both data points were displayed as in the scatter plot, but the links were added to show the connection of values.
+Essence of the data points was based on the ‘$\color{white}{x}$’ and ‘$\color{white}{y}$’ axis, meaning that the number of plots in the document was limited to scatter plots or just simple line plots where each data point was connected via a link. The convergence was that both data points were displayed as in the scatter plot, but the links were added to show the connection of values.
 
 The amount of subplots was different between each test as the latency tests had 3 non-empty columns that could be plotted on the x-axis, whereas the y-axis was decided to always display the sample size in bytes. It totalled to 6 plots in one latency test. Accordingly, the tests displaying throughput had 8 subplots as the number of columns was 4, where each had a zoomed-in graph next to it.
 
@@ -469,7 +487,7 @@ An important notice is that for the latency tests on the publisher side in the t
 Tables were displayed to complete the information under each test in the hope a viewer would navigate between graphical and tabular contents. Cumulative distribution function was the next implemented choice to improve the diversity of the values as it describes the likelihood of a random variable taking a specific value or value, which is less than or equal to the given value [(Statistics by Jim, 2023)](https://statisticsbyjim.com/probability/cumulative-distribution-function-cdf/). Plotting has used the variables created before and could be found underneath the tables in addition to the previous visualizations.
 
 #### 3.3.3 Implementation of the Perftest Java plugin
-To create the necessary plugin for additional data harnessing in other DDS solutions, the software development process began with the Agile methodology steps. Initially, during the planning phase, information was obtained through conversations between the user and an RTI employee who provided the file package needed to establish the initial foundation for the plugin. As per the project plan, the "Benchmark documentation reading" phase provided insights into how to use the testing software and its key functions. After reviewing the code, the plan was to commence the "Repurposing benchmarking application and development" phase from August 8th to August 31st, based on the '$\textcolor{yellow}{\textit{.zip}}$' folder provided by the employee.
+To create the necessary plugin for additional data harnessing in other DDS solutions, the software development process began with the Agile methodology steps. Initially, during the planning phase, information was obtained through conversations between the user and an RTI employee who provided the file package needed to establish the initial foundation for the plugin. As per the project plan, the "Benchmark documentation reading" phase provided insights into how to use the testing software and its key functions. After reviewing the code, the plan was to commence the "Repurposing benchmarking application and development" phase from August 8th to August 31st, based on the '$\color{yellow}{.zip}$ ' folder provided by the employee.
 The primary goal was to migrate the plugin, originally designed for the "vSOME/IP" middleware in 'C++', to Java. Therefore, the work's design encompassed the following:
 
 1.	Migrate the plugin from one programming language to another.
@@ -479,7 +497,23 @@ The primary goal was to migrate the plugin, originally designed for the "vSOME/I
 
 With a plan and initial design in place, the development phase commenced, where the plugin's architecture was rewritten for the chosen programming language (see Appendix F). However, as the complexity increased due to the transition between languages and the specific API syntax, more questions arose, and progress was hindered. Starting from August 22nd, the testing campaign needed to commence to accumulate the necessary data batches. Consequently, the project could not remain in the development stage, as per the methodology, as it required testing and final deployment to conclude the planned phase. Following the "Data collection of the testing campaign," communication with the RTI team was initiated to gather more details about the previously planned tasks to possibly get the unknown or company specific resource, which plugin could benefit from.
 
+<sub>[[Top 🢁](#contents)]</sub>
+
 ## 4 Results
 Chapter provides an overview of the outputs generated during the project's various stages, along with the results derived from the previously discussed methods and approaches. It begins with the presentation of the results of the test harness, undertaken to illustrate a range of statistical values for two performance measures. Following that, we delve into an analysis of the findings, exploring the reasons behind these values and assessing whether they reveal meaningful, intuitive patterns, comparisons, or unusual data phenomena. Finally, we present graphical and tabular visualizations of DDS performance metrics, supplemented with additional insights derived from the results of the test harness.
 
-<sub>[[Top 🢁](#experimental-performance-evaluation-of-data-distribution-service-software)]</sub>
+### 4.1	Results prerequisite
+Considering the literature review and the information gathered during the application of methods, it can be concluded that the results presented below were not originally compiled for such an analysis, which utilizes both tabular and graphical visualizations. At the time of writing, there are only a few dedicated web pages and documentation resources that offer basic comparisons of results, either contrasting them with other DDS solutions in a straightforward manner or comparing various implementations from a single provider to determine their best offering.
+
+The information presented below represents data that was gradually collected, analysed, and transformed to the best of author’s knowledge. All decisions made in this process were thoroughly described, and their effects were discussed. Furthermore, significant effort was dedicated to providing well-informed observations and valuable insights for interested parties or beneficiaries.
+
+The data was organized within a dedicated architectural spreadsheet, and visualizations were incorporated into the document, making these findings accessible to a wider audience, which is not a common practice. Finally, to further expand on the information and findings, additional mathematical functions were applied to enhance the previous observations and improve the overall quality of the results.
+
+### 4.2	Test harness of DDS system performance metrics
+#### 4.2.1 Throughput mode testing results for Publisher and Subscriber (Campaign one)
+In the first stage of the test harnessing, the results of the Publisher and Subscriber under the condition of the mode were collected from the Perftest benchmarking software (see Appendix C), with configuration and parameters described in the previous chapter. Table 0 presents the performance measurements collected from the Publisher and stored under the test listed as ‘1A’, presenting the performance values across many statistics. Table 1 presents the same aspects but is focused on the results obtained from the Subscriber side, where metrics are about throughput (test 1B). From the first table, it can be concluded that most values of the latency tend to decrease as the sample data size increases with more rows of data, but the pattern switches at the last rows with a minimum increase across all columns, making the latency perform worse. On the other hand, while the throughput's sample size grows and total samples decrease, the average samples are going down in opposition to what average Mbps. It suggests that throughput has a sense of adaptability in speed (in 'Mbps') to handle larger sample sizes and stay reliable. 
+
+
+
+
+<sub>[[Top 🢁](#contents)]</sub>
