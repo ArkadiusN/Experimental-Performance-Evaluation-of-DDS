@@ -61,6 +61,25 @@ The project was undertaken to obtain the results of the testing campaign using a
   - [4.1 Results prerequisite](#41-results-prerequisite)
   - [4.2 Test harness of DDS system performance metrics](#42-test-harness-of-dds-system-performance-metrics)
     - [4.2.1 Throughput mode testing results for Publisher and Subscriber (Campaign one)](#421-throughput-mode-testing-results-for-publisher-and-subscriber-campaign-one)
+    - [4.2.2 Throughput mode testing results for Publisher and Subscriber (Campaign two)](#422-throughput-mode-testing-results-for-publisher-and-subscriber-campaign-two)
+    - [4.2.3 Latency mode testing results for Publisher and Subscriber (Campaign one)](#423-latency-mode-testing-results-for-publisher-and-subscriber-campaign-one)
+    - [4.2.4 Latency mode testing results for Publisher and Subscriber (Campaign two)](#424-latency-mode-testing-results-for-publisher-and-subscriber-campaign-two)
+  - [4.3 Graphical visualisation of DDS system performance metrics on throughput mode](#43-graphical-visualisation-of-dds-system-performance-metrics-on-throughput-mode)
+    - [4.3.1 Plots of Publisher’s latency (Campaign one)](#431-plots-of-publishers-latency-campaign-one)
+    - [4.3.2 Plots of Subscriber’s throughput (Campaign one)](#432-plots-of-subscribers-throughput-campaign-one)
+    - [4.3.3 Plots of Publisher’s latency (Campaign two)](#433-plots-of-publishers-latency-campaign-two)
+    - [4.3.4 Plots of Subscriber’s throughput (Campaign two)](#434-plots-of-subscribers-throughput-campaign-two)
+  - [4.4 Graphical visualisation of DDS system performance metrics on latency mode](#44-graphical-visualisation-of-dds-system-performance-metrics-on-latency-mode)
+    - [4.4.1 Plots of Publisher’s latency (Campaign one)](#441-plots-of-publishers-latency-campaign-one)
+    - [4.4.2 Plots of Subscriber’s throughput (Campaign one)](#442-plots-of-subscribers-throughput-campaign-one)
+    - [4.4.3 Plots of Publisher’s latency (Campaign two)](#443-plots-of-publishers-latency-campaign-two)
+    - [4.4.4 Plots of Subscriber’s throughput (Campaign two)](#444-plots-of-subscribers-throughput-campaign-two)
+- **[5 Discussion](#5-discussion)**
+  - [5.1 Objective 1: Plugin for other DDS solution](#51-objective-1-plugin-for-other-dds-solution)
+  - [5.2 Objective 2: DDS experimental performance metrics](#52-objective-2-dds-experimental-performance-metrics)
+  - [5.3	Objective 3: DDS security enabled performance metrics](#53-objective-3-dds-security-enabled-performance-metrics)
+- **[6 Evaluation, Reflections and Conclusions](#6-evaluation-reflections-and-conclusions)**
+- **[7 Glossary](#7-glossary)**
 
 <sub>_Still not finding what you are looking for? Try the [Wikipedia](<https://en.wikipedia.org/wiki/Data_Distribution_Service>)!_</sub>
 
@@ -141,7 +160,7 @@ The project has been organised as follows:
 #### 2.1.1 What is “Data Distribution Service"?
 [Sim, W., Song, B., Shin, J. and Kim, T. (2021, p. 1)](https://www.mdpi.com/2079-9292/10/20/2524) defined the Data Distribution Service (DDS) to be a “standard in the publish–subscribe form” as well as the “data-centric middleware”. In the same way both of these definition are supported by the application programming interfaces of the providers in a way consistent with a purpose of serving as a standards for time and task-critical applications. The same context can be understood by looking at elementary, common mechanism in the society, being a subscriber to a newsletter. The only drawback in this comparison would be the potential consequence of subscribers not receiving requested information, as with this technology, it may lead to unfavourable outcomes. According to the DDS-Foundation, in a distributed system, there is a need for the middleware in the whole software architecture that would be a link between the operating system and applications [(DDS Foundation, 2023)](https://www.dds-foundation.org/what-is-dds-3/). The result of middleware taking this role is to allow easier communication and data sharing as well as taking accountability from the software developers to allow them save time on information passing between the systems and application. 
 
-The idea had the potential to function as it was highly supported by implementation technologies, while discarding the low-level details that would act as obstacles according to quote provided by [Object Management Group (DDS Foundation, 2023)](https://www.dds-foundation.org/what-is-dds-3/) “abstracts the Application from the details of the operating system, network transport, and low-level data formats. The same concepts and APIs are provided in different programming languages allowing applications to exchange information across operating systems, languages, and processor architectures”. The analogy mentioned before explains the further concepts that complements entire specification, as there is a publisher, subscriber, global data space, topic, data reader, data writer and QoS (Quality of Service). Naturally, when person subscribes to a newsletter, there should <img src="img/Figure2.jpg" height="250" width="410" align="left" style="margin-right:15px; margin-bottom:5px; border: 5px solid #181414"/> be a possibility to access a space where the information (topic) of interest, is available and follows predefined quality standards. As the person accesses the data, the role within is to read data, while publisher sending the newsletter writes data to the space of general access that then is observed by viewer. <img src="img/DDS.jpg" height="310" width="280" align="right" style="margin-left:15px; margin-bottom:5px; border: 5px solid #181414"/> In accordance with what is published about DDS, there are many topics that can appear in the domain, and all of them are shareable across many subscribers while it may happen that some are not of anyone’s interest.  All of the above ideas are shared in most definitions, however, they may add extra details which offer deeper functionalities, such as a filter (see Figure 1) where only a subset of data inside the topics is published or when the reader wants to have a view of a chunk of information available under a topic. According to Woongbin, there is a possibility to accept both roles where participant is split between being a reader and publisher in the global space with multiple $\color{yellow}{data \ writers}$ or $\color{yellow}{data \ readers}$ (see Figure 2). 
+The idea had the potential to function as it was highly supported by implementation technologies, while discarding the low-level details that would act as obstacles according to quote provided by [Object Management Group (DDS Foundation, 2023)](https://www.dds-foundation.org/what-is-dds-3/) “abstracts the Application from the details of the operating system, network transport, and low-level data formats. The same concepts and APIs are provided in different programming languages allowing applications to exchange information across operating systems, languages, and processor architectures”. The analogy mentioned before explains the further concepts that complements entire specification, as there is a publisher, subscriber, global data space, topic, data reader, data writer and QoS (Quality of Service). Naturally, when person subscribes to a newsletter, there should <img src="https://github.com/ArkadiusN/Experimental-Performance-Evaluation-of-DDS/blob/master/img/Figure2.jpg" height="250" width="410" align="left" style="margin-right:15px; margin-bottom:5px; border: 5px solid #181414"/> be a possibility to access a space where the information (topic) of interest, is available and follows predefined quality standards. As the person accesses the data, the role within is to read data, while publisher sending the newsletter writes data to the space of general access that then is observed by viewer.<img src="https://github.com/ArkadiusN/Experimental-Performance-Evaluation-of-DDS/blob/master/img/DDS.jpg" height="310" width="280" align="right" style="margin-left:15px; margin-bottom:5px; border: 5px solid #181414"/> In accordance with what is published about DDS, there are many topics that can appear in the domain, and all of them are shareable across many subscribers while it may happen that some are not of anyone’s interest.  All of the above ideas are shared in most definitions, however, they may add extra details which offer deeper functionalities, such as a filter (see Figure 1) where only a subset of data inside the topics is published or when the reader wants to have a view of a chunk of information available under a topic. According to Woongbin, there is a possibility to accept both roles where participant is split between being a reader and publisher in the global space with multiple $\color{yellow}{data \ writers}$ or $\color{yellow}{data \ readers}$ (see Figure 2). 
 
 #### 2.1.2 OMG Data Distribution Service specification
 To expand upon the definition of Data Distribution Service, it is worth examining the comprehensive and detailed specification provided by the pioneer in the development and definition of this technology, which is the Object Management Group (OMG).
@@ -252,7 +271,7 @@ The evidence may suggest that the disparity between the results could compel ben
 
 However, it's important to note that comparing results is not straightforward, even with the introduction of newly defined scales and values. Several factors influence these metrics, including software, hardware, methodologies, configuration setups, choices of what to measure, and customization of tests by middleware vendors.
 
-An efficient approach to achieving a meaningful and truthful comparison is to maintain a consistent testing environment and establish a global standard for testing. Such a standard would outline all the details of middleware testing. Until such action happens, the implication is such that the CoreDX and Vortex OpenSplice DDS have switch providers from Netgear and Dell, and they do not match versions of the Linux operating system for their tests, where one is "Linux 3.8.13-rt14.20.el6rt.x86_64" and the other "Linux 2.6 x86" [(ADLINK IST, 2021)](https://www.adlinktech.com/en/vortex-opensplice-performance).
+An efficient approach to achieving a meaningful and truthful comparison is to maintain a consistent testing environment and establish a global standard for testing. Such a standard would outline all the details of middleware testing. Until such action happens, the implication is such that the CoreDX and Vortex OpenSplice DDS have switch providers from Netgear and Dell, and they do not match versions of the Linux operating system for their tests, where one is $\color{white}{Linux \ 3.8.13-rt14.20.el6rt.x86 \ 64}$ and the other $\color{white}{Linux \ 2.6 \ x86}$ [(ADLINK IST, 2021)](https://www.adlinktech.com/en/vortex-opensplice-performance).
 
 #### 2.4.3 Benchmarking applications
 In 2020, [Howard Wang (Community Real-Time Innovations, 2020)](https://community.rti.com/forum-topic/there-benchmarking-tool-tests-performance-multiple-dds-products-well-rti) discussed the availability of benchmarking applications in his company for testing alternative solutions. Depending on the technology chosen, there are likely testing applications available for measuring latency and throughput, and these may be subject to expansion or modification. During the discussion, several third-party methods for measurement were outlined, along with mentions of company-specific software. However, a significant challenge is that only a few entities provide access to the complete source code, and even fewer offer documentation for enhancements, including tutorials or detailed documentation. Occasionally, you may come across a DDS benchmark that is outdated and no longer under development. 
@@ -328,6 +347,8 @@ IntelliJ is an excellent integrated development environment, which was mainly de
 -	Suggest improvements to created code to increase productivity and code design.
 -	Allows side-by-side view needed for the project plugin as the code references are going to be utilised. 
 
+<sub>[[Top 🢁](#contents)]</sub>
+
 ### 3.2 Exploratory analysis of DDS system performance
 #### 3.2.1 Worksheet encapsulating metrics for DDS system performance
 First of all, the design of the spreadsheet was informed by the existing performance testing analyses of many DDS providers. The commonality between them is providing these results in at least one form of communication, but it is often more, or they are combined. Eclipse Cyclone DDS has presented them in the documentation where tests are displayed on the nested graphs [(Cyclonedds, 2023)](https://cyclonedds.io/docs/cyclonedds/latest/about_dds/performance.html#test-setup).
@@ -352,6 +373,8 @@ At last, based on the characteristics of the information, which were previously 
 
 #### 3.2.2 Test harness document for visualizing DDS system performance metrics
 By suggesting that the form of performance measurements ought to be decomposed and subsequently presented in a dedicated space, there was seen a potential benefit from this approach. Having two organized and specialized places where only necessary information is located releases any ambiguity and decreases the chance of a wrong view of done activities. The visualization document, in that case, used a completely different inspiration, which was a report released by Japan Tobacco International. The document titled “Results of a national public opinion survey on the perception of plain packaging on tobacco one year after its implementation in the UK” has presented the initial idea of how to present graphical values collected from the DDS tests [(Japan Tobacco International, pp. 7-14, 2018)](https://www.jti.com/sites/default/files/global-files/documents/related-documents/results-national-public-opinion-survey-perception-plain-packaging-UK.pdf). At first, it was decided that the study located in the document should have an introduction with sufficient information on the motives and how the data from the spreadsheet was used as a resource. Subsequently, a decision was made to provide reasoning for using certain configurations/parameters in case a layman would be interested in the research. The architecture of the document also required a conclusion from the graphs and the final evaluation of the key findings to inform about the opinions and views of the author. Then, [Handley Wickham (pp. 6-11, 2014)](https://doi.org/10.18637/jss.v059.i10) with the Journal of Statistical Software titled “Tidy Data” displayed how clear data can be presented with tables of values. It can be concluded that it gives the viewer insights into what was displayed with graphs and makes the process of understanding more natural, especially when data is complex. Besides, it affected the project’s document by guiding how the data should be cleared and transformed. In the end, the value corresponded to the characteristics of the data collected as they are dependent on the columns more than rows (and their graphical display is also dependent on that factor). For the case where data has a columnar structure and is likely to use the 'x' and 'y' axis, the use of scatter plots was considered. Glenn J. Myatt and Wayne P. Johnson in the book 'Making sense of Data I' described that 'Scatterplots can be used to identify whether a relationship exists between two continuous variables measured on the ratio or interval scales. The two variables are plotted on the x and y-axis. Each point displayed on the scatterplot is a single observation' [(Myatt, G.J., pp 60-63, 2014)](https://onlinelibrary.wiley.com/doi/book/10.1002/9781118422007). 
+
+<sub>[[Top 🢁](#contents)]</sub>
 
 ### 3.3 Implementation
 #### 3.3.1 Implementation of the test harness and DDS system performance metrics in the spreadsheet
@@ -457,7 +480,7 @@ As can be expected, the subscriber side has also used the $\color{yellow}{.jar}$
 defined by other parameters'
 ``` 
 
-Testing commenced on a system running the Windows 10 operating system, configured with the architecture “i86Win64VS2022”, accompanied by 16 gigabytes of Random-Access Memory (RAM) and powered by an Intel Core i5-8300H CPU, operating at 2.30GHz (2304 MHz) with 4 cores and 8 logical processors. The networking machine is a router with the specification of Hub 3.0 and type VMDG505/TG2492LG-VM. With two concurrently running command-line interfaces (one publisher and one subscriber), the test was started with the defined sample size in bytes that kept the role of positive powers of two (also called binary powers) [(Exploringbinary, 2008)](https://www.exploringbinary.com/the-powers-of-two/). Therefore, the data sizes have started from 32 to up to 40 thousand, where the upper limit of 65536 was not reached due to errors causing the stoppage of the tests. They were running for a total time of 6 minutes due to setting up the delay between each data size sent, and this timing involved both the Publisher and Subscriber. Moreover, the test was halted after 6 minutes when the last data size test was done, which was the included chosen upper limit. During this time, the testing activities were done at the same period, which was the end of August (see Appendix B), to ensure that no additional network stress or any machine-related issues were going to affect the end measurements. The type of tests were in two modes: the first one was named as “THROUGHPUT TEST”, whereas the other was “LATENCY TEST (Ping-Pong test)”. Interest lies in the metrics of latency and throughput, which are the standard performance measures for computer-based systems and distributed systems. The total number of test runs was four with the security disabled feature, where half of the test was in one mode for both Publisher and Subscriber, while the other was done in the other mode. After examining the test results, there existed twelve rows of data based on the specified data size range for each entity.
+Testing commenced on a system running the Windows 10 operating system, configured with the architecture $\color{white}{i86Win64VS2022}$, accompanied by 16 gigabytes of Random-Access Memory (RAM) and powered by an Intel Core i5-8300H CPU, operating at 2.30GHz (2304 MHz) with 4 cores and 8 logical processors. The networking machine is a router with the specification of Hub 3.0 and type VMDG505/TG2492LG-VM. With two concurrently running command-line interfaces (one publisher and one subscriber), the test was started with the defined sample size in bytes that kept the role of positive powers of two (also called binary powers) [(Exploringbinary, 2008)](https://www.exploringbinary.com/the-powers-of-two/). Therefore, the data sizes have started from 32 to up to 40 thousand, where the upper limit of 65536 was not reached due to errors causing the stoppage of the tests. They were running for a total time of 6 minutes due to setting up the delay between each data size sent, and this timing involved both the Publisher and Subscriber. Moreover, the test was halted after 6 minutes when the last data size test was done, which was the included chosen upper limit. During this time, the testing activities were done at the same period, which was the end of August (see Appendix B), to ensure that no additional network stress or any machine-related issues were going to affect the end measurements. The type of tests were in two modes: the first one was named as “THROUGHPUT TEST”, whereas the other was “LATENCY TEST (Ping-Pong test)”. Interest lies in the metrics of latency and throughput, which are the standard performance measures for computer-based systems and distributed systems. The total number of test runs was four with the security disabled feature, where half of the test was in one mode for both Publisher and Subscriber, while the other was done in the other mode. After examining the test results, there existed twelve rows of data based on the specified data size range for each entity.
 
 To logically separate the tests and add an order to them, it was decided to perform each test in pairs. The meaning behind using pairs of entities was to reduce the jumps between testing pages and allow viewers to see which entities communicated and whether the given test was about latency or throughput. While the tests are concatenated together, similar to low-level data fusion, where “datablocks are simply concatenated and then analysed together as one single block” [(Smilde, A.K., Næs T., Liland H.K., p. 5, 2022)](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119600978), the importance of such a method lies in demonstrating the unification between two parties in communication, rather than consolidating the results in one place. Another essential point is that each unit in the pair was inherently accompanied by an alphabetical value describing its character (Publisher or Subscriber) in the network communication. While the mode of the test can be changed by the `-latencyTest` parameter, the spreadsheet needs to emphasize the fact that the Publisher will output the latency information while the Subscriber will show throughput. This distinction was detailed in the documentation, stating that “in this case, we are interested in the latency results, not in the throughput results (we are doing a ping-pong test, so we cannot expect high throughput). Therefore, we need to look at the results displayed on the Publisher side”.
 
@@ -528,7 +551,7 @@ In the first stage of the test harnessing, the results of the Publisher and Subs
 <em>Table 1 Throughput metrics collected from the Subscriber entity in the Throughput mode.</em>
 </p>
 
-#### 4.2.2 Throughput mode testing results for Publisher and Subscriber (Campaign two)
+#### 4.2.2 Throughput mode testing results for Publisher and Subscriber Campaign two
 The second round of testing in the same mode on both sides of the communication happened in the same scenario, shortly after the first data was generated and collected from the 28th of August to the 3rd of September (see Appendix B). Repeatedly, a set of twelve rows of data was collected from the Publisher (test 3A). A clear difference in the second test can be observed, as across all of the statistics, the values are higher on the three initial rows in comparison to what was achieved previously. While the difference between values in both tables, Table 0 and Table 2, decreases from the middle rows, the pattern at the end rows was kept for the latency. Table 3 showcases the metrics of the throughput from test ‘3B’, where it can be concluded that the first round of testing has provided higher momentum in increasing throughput, average megabytes per second. It is especially visible when the value of ‘21386.6’ from Table 1 is compared to ‘20221.5’. While it is possible that tests could continue to underperform, it is only a speculation, and the difference between tests can be taken as a healthy difference. It is rather unlikely that network overhead or other unforeseen factors have appeared. 
 
 <p align="center">
@@ -543,7 +566,7 @@ The second round of testing in the same mode on both sides of the communication 
 <em>Table 3 Throughput metrics collected from the Subscriber entity in the Throughput mode (Campaign two).</em>
 </p>
 
-#### 4.2.3 Latency mode testing results for Publisher and Subscriber (Campaign one)
+#### 4.2.3 Latency mode testing results for Publisher and Subscriber Campaign one
 Passing the judgment from the previous tests is, in some way, irrelevant, as the mode of the upcoming tests has changed to include the ping-pong exchange, which is shortly after a publisher sends a ping and then blocks itself until it receives a pong from the subscriber. Table 4, coming from the test ‘2A,’ has a completely contrasting range of values across the whole distribution when compared to Table 0 or Table 2. The only similarity can be observed at percentile columns, where values are somewhat comparable on the 7th and 8th rows. Interestingly, there exists an anomalous outlier, which has in some way set all of the values, except the latency standard deviation, to ‘6256’. Such a high-value definition suggests that a network overhead or some unforeseen circumstance has become a negative factor in the latency. It is truthful to say that the reliability of this exchange was harshly affected, especially when considering the characteristics of other values in this table. Table 5 from test ‘2B,’ on the other hand, has reduced total samples by one decimal place and the other statistics of the throughput. Naturally, the same consequence of mode is favouriting and improving the metric associated with the mode, which can be observed by taking both tables and contrasting them with their predecessors.
 
 <p align="center">
@@ -557,5 +580,334 @@ Passing the judgment from the previous tests is, in some way, irrelevant, as the
 
 <em>Table 5 Throughput metrics collected from the Subscriber entity in the Latency mode.</em>
 </p>
+
+#### 4.2.4 Latency mode testing results for Publisher and Subscriber Campaign two
+The second round of the latency test from ‘4A’ has been very beneficial across the values, such as average latency in microseconds, but the minimum latency in the initial stages, from top to bottom, is on the side of the first collection. Positively, the maximum latency was kept at a high-quality level by not going over the 300 mark, which was very common for the initial test. In addition, there are no unusual outliers that could affect any latency value during a data send. Overall, this test shows very reliable communication across all dispositions and is considered the definition of great performance. Table 7, in the same indicator of the test going better on the second try for the latency and throughput under the specified mode (test 4B), shows that the average throughput in megabytes per second has increased considering values from the 6th row till the end. 
+
+<p align="center">
+<img src="img/Table6.png" height="250" style="border: 5px solid #181414"/>
+
+<em>Table 6 Latency metrics collected from the Publisher entity in the Latency  mode (Campaign two).</em>
+</p>
+
+<p align="center">
+<img src="img/Table7.png" height="250" style="border: 5px solid #181414"/>
+
+<em>Table 7 Throughput metrics collected from the Subscriber entity in the Latency mode (Campaign two).</em>
+</p>
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+### 4.3 Graphical visualisation of DDS system performance metrics on throughput mode
+#### 4.3.1 Plots of Publisher's latency Campaign one
+The plotting of the acquired results was done via utilization of the Jupyter Notebook document, where a block of data scientific code (see Appendix E) was developed with the support of external libraries. Values plotted on the ‘x-axis' were always the same as considered sample size in bytes, whereas the value of ‘y’ changed within each row of plots to include each column of interest. However, the focus should be targeting the ‘Average latency (microseconds)’ and the ‘Throughput average (Mbps). 
+
+The first set of plots from Figure 11 presents the so-called ‘value by value’ graphically, so the consequence is a display of changes with an increase in the data sample size during the latency test. It can be observed that the average latency gets better with the time of continually increasing the size of samples, and the zoomed-in version only confirms the pattern with some minor values going up at the y-axis. Standard deviation, which in essence presents how spread out or dispersed our data is from its average, displays that on the bottom left corner of the second row of plots; the zoomed-in version suggests low ‘std’. The result is that data points are in some way consistent and not as much spread out. On the contrary, the larger picture on the left side shows a high ‘std’, making it closer to average.
+
+Figure 12 has showcased how both the minimum and maximum time of latency have changed throughout the whole test, and their right-side version introduces the idea of the data points being closely together when it comes to their range upon removing the three initial $\color{white}{x}$ and $\color{white}{y}$ values.
+
+At last, we have two versions of the Cumulative Distribution Function (CDF), where Figure 13 shows a smooth estimate, which does not start from zero. In contrast to it, there is also Figure 14 with the exact CDF going through each value of ‘Average latency (microseconds)’. Understanding this function is about looking at the x-axis values we want to study (such as average latency) and then looking at the probability on the y-axis for the random value to be less than or equal to the corresponding x-value (Byju’s, 2019). The density of the values at a certain point of the x-axis is what is stressed on the first plot, whereas the second plot describes the proportion of the data points falling below or being equal to a specific x-axis value. For example, there exists a proportion of data points being lower or equal to the value in the range of 1900 up to 3500 with a proportion of 0.82. 
+
+<p align="center">
+<img src="img/Figure11.png" height="545" style="border: 5px solid #181414"/>
+
+<em>Figure 11 First part of the subplots visually presenting the metrics of Publisher’s latency.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure12.png" height="565"  style="border: 5px solid #181414"/>
+
+<em>Figure 12 Second part of the subplots visually presenting the metrics of Publisher’s latency.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure13.png" height="375" style="border: 5px solid #181414"/>
+
+<em>Figure 13 Smooth estimate of Cumulative Distribution Function (CDF) for Average latency in microseconds (us).</em>
+</p>
+
+<p align="center">
+<img src="img/Figure14.png" height="390"  style="border: 5px solid #181414"/>
+
+<em>Figure 14 Cumulative Distribution Function (CDF) for Average latency in microseconds (us).</em>
+</p>
+
+#### 4.3.2 Plots of Subscriber’s throughput Campaign one
+Graphical representation of throughput involves the observation of changes in the number of total samples and their complementary average amount of samples passed per second. Looking strictly at the first two rows presenting these types of measurements, it can be derived that these data points allow a good capture of the performance, with the values ranging from millions to hundreds of thousands per second. In the case of such ranges and data rates, the tests and their plots show a closer understanding of the DDS performance. Additionally, there exist higher Mbps values that indicate high data transfer or perhaps a great network capacity to add a comprehensive view of the performance to what was seen at first sight. Figure 16 shows a tendency to increase the data transfer as the sample size in bytes goes up, which is a common scenario as larger data can benefit from the available bandwidth. While it is hard to tell what sparked larger Mbps after the phase in the zoomed-in graph of the last figure, it has increased quadratically from that point forward. Figures 17 and 18 clearly present a smooth cumulative probability of values being close to numbers higher than 4700, with the proportion of 0.78 in the CDF indicating values from 8 to 14 thousand.  
+
+<p align="center">
+<img src="img/Figure15.png" height=535" style="border: 5px solid #181414"/>
+
+<em>Figure 15 First part of the subplots visually presenting the metrics of Subscriber’s throughput.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure16.png" height="285"  style="border: 5px solid #181414"/>
+
+<em>Figure 16 Second part of the subplots visually presenting the metrics of Subscriber’s throughput.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure17.png" height="375" style="border: 5px solid #181414"/>
+
+<em>Figure 17 Smooth estimate of Cumulative Distribution Function (CDF) for Throughput average Mbps.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure18.png" height="375"  style="border: 5px solid #181414"/>
+
+<em>Figure 18 Cumulative Distribution Function (CDF) for Throughput average Mbps.</em>
+</p>
+
+#### 4.3.3 Plots of Publisher’s latency Campaign two
+Comparing the results presented in Figure 19 to those in Figure 11 reveals minor changes in the spike of average latency when examining the first row of zoomed-in graphs. In Figure 19, this spike appears at the 8th thousand mark, suggesting an initial increase in latency performance at that interval. However, when looking at the larger picture, this idea is contradicted, and the average latency appears to have decreased on a smaller scale in the newest figure. Upon close examination of both campaigns, the other statistical variables show nearly overlapping patterns without a significant surge in any direction, as indicated by the data points. Some results even demonstrate a reduction in both the maximum and minimum latency values, which is a positive observation in this context. Based on the smooth estimate of the Cumulative Distribution Function (CDF) and the original function, it cannot be argued that there is no variation between the first and second campaigns. The density of values, as well as the proportion, has not changed significantly in this context. 
+
+<p align="center">
+<img src="img/Figure19.png" height="545" style="border: 5px solid #181414"/>
+
+<em>Figure 19 First part of the subplots visually presenting the metrics of Publisher’s latency.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure20.png" height="545"  style="border: 5px solid #181414"/>
+
+<em>Figure 20 Second part of the subplots visually presenting the metrics of Publisher’s latency.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure21.png" height="375" style="border: 5px solid #181414"/>
+
+<em>Figure 21 Smooth estimate of Cumulative Distribution Function (CDF) for Average latency in microseconds (us).</em>
+</p>
+
+<p align="center">
+<img src="img/Figure22.png" height="375"  style="border: 5px solid #181414"/>
+
+<em>Figure 22 Cumulative Distribution Function (CDF) for Average latency in microseconds (us).</em>
+</p>
+
+#### 4.3.4 Plots of Subscriber’s throughput Campaign two
+Visualization of the testing campaign encapsulated in the throughput has shown that Figure 23 and Figure 15 are steadily similar in the way the throughput’s total samples and average samples (per second) dip as the sample size peaks. Upon closer examination of Figure 24, there is a gentle decrease in throughput average in Mbps compared to Figure 16, where the mark of 21 thousand seems to be marginally achieved. Consequently, the previous test has achieved better overall results. When looking at the smoothed estimate of CDF, we are not able to discern any phenomena or unusual aspects of the metric. However, the CDF in Figure 26 shows fewer values that are equal to or smaller than the value on the x-axis when the grid goes over 20 thousand. In the same type of plot as in Figure 18, there exist more data points with a proportion of 0.9 at that x-axis value, indicating that the figure below has achieved less average throughput in Mbps at the highest point. Such a conclusion must be considered within the context of the function, but there exists a possibility of such a scenario. 
+
+<p align="center">
+<img src="img/Figure23.png" height=535" style="border: 5px solid #181414"/>
+
+<em>Figure 23 First part of the subplots visually presenting the metrics of Subscriber’s throughput.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure24.png" height="285"  style="border: 5px solid #181414"/>
+
+<em>Figure 24 Second part of the subplots visually presenting the metrics of Subscriber’s throughput.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure25.png" height="375" style="border: 5px solid #181414"/>
+
+<em>Figure 25 Smooth estimate of Cumulative Distribution Function (CDF) for Throughput average Mbps.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure26.png" height="375"  style="border: 5px solid #181414"/>
+
+<em>Figure 26 Cumulative Distribution Function (CDF) for Throughput average Mbps.</em>
+</p>
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+### 4.4 Graphical visualisation of DDS system performance metrics on latency mode
+#### 4.4.1 Plots of Publisher’s latency (Campaign one)
+The collection of plots presented in the first figure below illustrates the distribution of values across different sample sizes under distinct variables. These plots represent the values collected under conditions of another mode, which have significantly reduced both the data values and the ranges in which these data values were previously situated. It is evident that the values of latency were affected by a specific unusual outlier, which is included in the left-hand side of the plots but removed from the right-hand side in the zoomed-in version. Data cleaning practices were employed to provide evidence of the cleaner version and to visualize how the data points are distributed across the board.
+
+By examining the first row of Figure 27, we can determine that initial values often did not exceed the 180 mark on the y-axis in the initial operating stage and rapidly fell to the 60 microseconds area, achieving a great result. Standard deviation has strengthened the previous argument, as the data points are not dispersed, resulting in a low value within the 20-40 grid mark range. On the other hand, the maximum latency time on the zoomed graph started at more than 700 but quickly decreased to a lower area (Figure 28), which can be treated as a good indicator of adaptability. Figure 29 and the density around the value of the outlier can affect the judgment of the overall metrics, as the probability density for these large values only exists because of it. To differentiate it, we need to consider that only one data point is available from the 30th figure with such a steeply defined proportion
+
+<p align="center">
+<img src="img/Figure27.png" height=545" style="border: 5px solid #181414"/>
+
+<em>Figure 27 First part of the subplots visually presenting the metrics of Publisher’s latency.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure28.png" height="565"  style="border: 5px solid #181414"/>
+
+<em>Figure 28 Second part of the subplots visually presenting the metrics of Publisher’s latency.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure29.png" height="375" style="border: 5px solid #181414"/>
+
+<em>Figure 29 Smooth estimate of Cumulative Distribution Function (CDF) for Average latency in microseconds (us).</em>
+</p>
+
+<p align="center">
+<img src="img/Figure30.png" height="375"  style="border: 5px solid #181414"/>
+
+<em>Figure 30 Cumulative Distribution Function (CDF) for Average latency in microseconds (us).</em>
+</p>
+
+#### 4.4.2 Plots of Subscriber’s throughput Campaign one
+Considering previously described aspects of this performance indicator, we can conclude that throughput is significantly impacted by the mode change. The evidence below suggests that both the total sample count and the average samples per second have sharply plummeted when compared to Figures 15 and 16. Upon examining the tests in the first two rows of plots, we can observe a decrease at the 8 and 4 thousand marks on each of the original graphs. This contrasts with the slow and gradual decrease seen in the figures mentioned earlier. However, Figure 32 displays a better average throughput in Mbps when contrasted with the analogous graph. Lastly, Figure 33 indicates that the density of the values near the point of large values of the x-axis is high as it achieves 0.7 on the 11 thousand mark. Furthermore, the proportion of data points being less than or equal to x-axis values from 4 to 23 thousand touches 0.6 and higher. 
+
+<p align="center">
+<img src="img/Figure31.png" height=535" style="border: 5px solid #181414"/>
+
+<em>Figure 31 First part of the subplots visually presenting the metrics of Subscriber’s throughput.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure32.png" height="285"  style="border: 5px solid #181414"/>
+
+<em>Figure 32 Second part of the subplots visually presenting the metrics of Subscriber’s throughput.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure33.png" height="375" style="border: 5px solid #181414"/>
+
+<em>Figure 33 Smooth estimate of Cumulative Distribution Function (CDF) for Throughput average Mbps.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure34.png" height="375"  style="border: 5px solid #181414"/>
+
+<em>Figure 34 Cumulative Distribution Function (CDF) for Throughput average Mbps.</em>
+</p>
+
+#### 4.4.3 Plots of Publisher’s latency Campaign two
+The graph in Figure 35 provides information about the average latency, which does not exceed the range of a few thousand or the upper ranges of integers, like 500. This is in contrast to what was seen in the instance of Figure 19 for different modes. Similarly, the latency’s minimum time, maximum time, standard deviation in microseconds, and average latency in microseconds in the same mode (disregarding the outlier) have decreased in Figure 35 compared to the corresponding Figure 27.
+
+The central theme of the standard deviation shows that values have gently dispersed but in better ranges than what was achieved earlier. Likewise, the smoothed estimate has revealed that the density of lower x-axis values is proportionally higher compared to previous tests. In previous tests, the likelihood of observing data values near the larger x-axis points was significant, whereas it was lower for the smaller x-axis points. All of the aforementioned metrics are presented more effectively in the second testing harness, which did not exhibit any spikes in the gathered data. This improvement may be attributed to the removal of a potential point of failure or network anomaly, which has also substantially reduced the height of the x-axis values, making it possible for data points to be equal to or smaller than them.
+
+<p align="center">
+<img src="img/Figure35.png" height=545" style="border: 5px solid #181414"/>
+
+<em>Figure 35 First part of the subplots visually presenting the metrics of Publisher’s latency.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure36.png" height="565"  style="border: 5px solid #181414"/>
+
+<em>Figure 36 Second part of the subplots visually presenting the metrics of Publisher’s latency.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure37.png" height="375" style="border: 5px solid #181414"/>
+
+<em>Figure 37 Smooth estimate of Cumulative Distribution Function (CDF) for Average latency in microseconds (us).</em>
+</p>
+
+<p align="center">
+<img src="img/Figure38.png" height="375"  style="border: 5px solid #181414"/>
+
+<em>Figure 38 Cumulative Distribution Function (CDF) for Average latency in microseconds (us).</em>
+</p>
+
+#### 4.4.4 Plots of Subscriber’s throughput Campaign two
+The observations from the last tests presented in Figures 39 and 40 are consistent with the initial observations when we analyse the decrease in throughput's total and average samples concerning the mode. However, the first two variables have not been significantly affected by the steep drop in samples, and there is a slight decline in average samples per second observed in the rows of Figure 31.
+
+It's worth noting that the starting point was also larger, and Figure 40 achieves a higher average throughput in Mbps. Figure 41 corresponds to the first campaign (Figure 33), while Figure 42 highlights the proportion of data points that are smaller or equal to larger x-axis values in comparison to Figure 34.
+
+<p align="center">
+<img src="img/Figure39.png" height=535" style="border: 5px solid #181414"/>
+
+<em>Figure 39 First part of the subplots visually presenting the metrics of Subscriber’s throughput.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure40.png" height="285"  style="border: 5px solid #181414"/>
+
+<em>Figure 40 Second part of the subplots visually presenting the metrics of Subscriber’s throughput.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure41.png" height="375" style="border: 5px solid #181414"/>
+
+<em>Figure 41 Smooth estimate of Cumulative Distribution Function (CDF) for Throughput average Mbps.</em>
+</p>
+
+<p align="center">
+<img src="img/Figure42.png" height="375"  style="border: 5px solid #181414"/>
+
+<em>Figure 42 Cumulative Distribution Function (CDF) for Throughput average Mbps.</em>
+</p>
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+## 5 Discussion
+This chapter examines the project's results and puts them against the identified objectives to determine whether they have been achieved. It also delves into the broader context of other theoretical work in the related field to assess the validity and generalisability of the results. Finally, we explore the implications and recommendations that arise from these findings.
+
+### 5.1	Objective 1: Plugin for other DDS solution 
+The first objective, which aimed "To identify a benchmark application that can be repurposed or enhanced to deploy against at least two Data Distribution Services without Security-enabled features" was partially achieved. Benchmarking software was first identified in section 2.4.3, and the rationale for its selection was proposed in section 3.1.1, which was further detailed in the implementation (section 3.3.1). It successfully performed the test harnessing without the security features enabled, as emphasized in the implementation, with full details provided in the parameter and configuration view.
+
+Information was gathered from sources such as compilation and other sections of the documentation (Community Real-Time Innovations, 2022) to understand how to potentially repurpose or enhance the architecture for deployment with other non-RTI DDS solutions. Efforts were made to progress with the design and development to eventually achieve deployment on the other middleware. However, the development progress was limited due to references provided by Wang, H. (Community Real-Time Innovations, 2020), where the syntax was architecture-specific and constrained resources and limited support played significant roles (see Appendix G).
+
+Therefore, it can be concluded that the testable result outlined in section 1.3, which was to create "software that was repurposed and used to collect information about DDS solutions from more than one firm" was not sufficiently fulfilled. An observation stemming from this outcome is that alternative software options could be explored (section 2.4.3).
+
+The implications of these events led to a halt in the progress of the work during the middle stage of the project plan, preventing the acquisition of additional data batches from another DDS solution. Due to time constraints, other activities had to be prioritized, and the work shifted to the next stage. A more effective approach to addressing such issues in the future would involve allocating more time and collaborating with a supervisor, which was not available during this effort. Improved communication and appropriate adjustments could then be made.
+
+Furthermore, when choosing testing software, the author could consider options that have a track record of successful plugin expansion and offer clear code and syntax documentation for the chosen programming language. This approach would significantly enhance the progress in achieving this objective.
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+### 5.2	Objective 2: DDS experimental performance metrics
+The second objective, which aimed "To produce experimental measurements for the Data Distribution Services of choice that are analysable, evaluable, and subjected to comparison while encapsulated in a report at the end of the project" has been fully achieved. Distributed systems performance measures, including both latency and throughput as elaborated in section 2.3, were generated and collected by taking batches of information from the benchmark. The information obtained has addressed the issues identified in section 2.1.4, where the gap in the performance analysis of the DDS was recognized.
+
+If we were to break down the objective, it can also be stated that the analysis exists within the spreadsheet encapsulating the DDS system performance, complemented by sections such as 4.2, 4.3, and 4.4. These sections provide great detail in tabular form, containing all of the data and observations derived from it. Additionally, they delve into data patterns, anomalies, and trends under constraints to demonstrate how much the data has changed and whether the changes were positive as the testing campaign and analysis continued. They include comparisons between tests, exploring the variables used (such as standard deviation) to enrich the findings and emphasize the possibility of evaluation. Various perspectives, ranging from the time between tests to configurational settings and unforeseen aspects, are discussed to showcase result changes (section 4.3).
+
+Despite the aforementioned efforts, these sections provide a full picture for new interpretations and evaluation, which again aligns with the objective. Code was developed not only to encompass variables such as average latency and average throughput in Mbps but also other variables that can be correlated with data size in bytes, such as standard deviation, zoomed-in graph versions, and cumulative distribution functions (see Appendix E). The resulting visualizations that cover the metrics of interest conclude the second objective, as the report offers a comprehensive view of the data through various visualization and data display, transformation, and clearance approaches, as discussed in sections 4.3 and 4.4.
+
+In review, the information gathered in the literature review has informed the author about how companies and individuals conduct their testing campaigns (see section 2.4.2) and has provided confidence that the results and all associated activities have been executed with precision and are representative of the environment created and presented.
+
+The implications of this work are the numerous insights into DDS performance, presented through various forms of communication, with the author's perspective and discoveries under clearly defined conditions.
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+### 5.3	Objective 3: DDS security enabled performance metrics
+The final objective was "To desirably use the benchmark application on Data Distribution Services with their additional security configuration enabled to expand the findings". While this objective was not a primary focus, it was kept as an option in case it could enhance the project's quality. The implementation of security-enabled tests was described in Section 3.3.1, as the possibility was initially outlined in the software tools (see Section 3.1.1).
+
+Efforts to conduct these tests spanned from the beginning of the testing harness phase to the end of the project. Unfortunately, the conversion was not realized due to an unknown issue that could not be resolved within the project's limited timeframe, even with the company's documentation and message exchange (see Appendix G).
+
+The implication of this unresolved issue was a lack of additional data regarding how the software performs under the expected security features, which were likely to impact throughput and increase DDS latency. For future work, it might be advisable to consider changing the language and platform on which the tests are conducted to avoid such issues, possibly using more common Linux or Mac versions. Additionally, starting communication with RTI earlier in the project timeline, rather than during the project report writing phase (around September 6th), could facilitate issue identification and resolution.
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+## 6 Evaluation, Reflections and Conclusions
+The project has achieved partial success in meeting its original objectives. I strongly believe that the most crucial aspect of the project revolved around understanding the use case of DDS, learning how to deploy it, utilizing the benchmarking application to conduct test harnesses, and culminating in the acquisition of data. Upon completing these activities, we proceeded to analyse the results, focusing on the performance in terms of latency and throughput. This experimental evaluation represents the most significant contribution to the DDS technology space. 
+
+The understanding of Data Distribution Service (DDS) technology, as well as the correction of misconceptions regarding the desired metrics, was greatly facilitated by the literature review in sections 2.1.1 and 2.3. Similarly, the testing guidelines and the analysis of prior work (as discussed in Section 2.4.2) provided a clear direction for initiating the project with well-defined objectives. These methods offered the advantage of adopting a gradual and iterative approach, resulting in a structured sequence of steps that brought me closer to achieving the project's goals and clarified the approach to various activities. For instance, the design and implementation of the spreadsheet (see Section 3.2.1) benefited from this approach by categorizing information efficiently and eliminating unnecessary layout complexities, thus streamlining subsequent tasks.
+
+The transition from the spreadsheet to Jupyter Notebook was executed smoothly, reducing the complexity of programming work and expediting the creation of the final graphical output. Overall, these incremental developments culminated in a well-informed document that enhanced the effectiveness of data-related activities. These activities have established new knowledge base, featuring data in various formats that share common attributes of availability and simplicity. Furthermore, it provides an in-depth understanding, analysis, and evaluation of the project's outcomes. The project has covered a wide range of data and configuration perspectives, offering insights into metrics and their behaviour under defined parameter conditions and changes in environmental modes.
+
+The beneficiaries of this project can now utilize the report and its included information to assess the performance of DDS vendors and compare them with other offerings. Subsequently, they can delve into the details and determine whether their requirements align with this DDS solution, enabling them to make informed decisions.
+
+Additionally, this project's approach can serve as a template for conducting one's testing campaign, leveraging the insights gained through hands-on experience rather than relying solely on available resources. This approach can significantly benefit individuals as many issues were resolved throughout the project's various stages, especially in addressing configuration errors. Consequently, anyone can create a testing campaign and gain valuable insights on how to align their products with the presented results.
+
+In the broader context of experimental DDS testing, these activities are likely to become more commonplace. This trend is expected to continue as the demand for critical systems increases each year, and solutions will need to distinguish themselves from competitors to attract business partners. Given that there are not many well-established solution providers in this space, it is anticipated that the industry will expand. This growth will be particularly prominent in industries where minimizing delays and maximizing throughput is an ongoing necessity. 
+
+Based on the insights gained from this project, there is a possibility that in the next few years, Data Distribution Service (DDS) technology will experience significant growth. This expansion may involve more implementations offered by technology companies, making DDS less isolated and positioning it as a well-established technology worth considering.
+
+The project presented a challenging learning curve, primarily because I had no prior knowledge of Data Distribution Service (DDS) or the benchmarking application used to collect data on this technology. I invested time in acquiring an understanding of these new concepts and grasping the intricacies of DDS, which eventually became a critical factor in evaluating the project's success.
+
+Initially, I had limited knowledge of performance metrics, especially in the context of distributed systems. However, during the literature review phase, I gained confidence in the chosen DDS solution and the configurable benchmarking application through available documentation. Challenges arose when I began developing the plugin to fulfil the first project objective. The documentation was primarily in languages I had not previously encountered, making it considerably more difficult. Additionally, the files provided by the company's employee lacked clarity in syntax, and there were no tutorials available for the chosen programming language, mirroring the plugin documentation's limitations. The situation was exacerbated by the unavailability of the project supervisor during the development phase, as per the original plan. While I dedicated a significant amount of time to finding resources that could simplify this complexity, the project's time constraints necessitated the initiation of other activities.
+
+Despite not overcoming this particular challenge and not getting the information from security tests, I successfully achieved the second objective, which was the most crucial aspect of the project: creating a comprehensive experimental evaluation of DDS performance. As I progressed from the middle to the end stages of the project, I found a sense of confidence as everything aligned with the project plan. Throughout this process, I acquired substantial knowledge and skills. Ultimately, I am satisfied with the outcomes of my work, with a document for testing and spreadsheet collection batches of data. I recognize that there is room for improvement through further testing with different configurations and features.
+
+To enhance the project's deliverables, a series of new tests could be conducted using entirely different parameters, which would yield information on factors like data length, latency count, and delays. Once the configuration-based tests are completed, the same tests could be repeated with security features enabled, providing additional insights into performance metrics. Furthermore, an additional proposition would involve rerunning all these tests to establish an extensive knowledge base where each activity has been tested at least twice.
+
+If I were to undertake the project again, I would schedule more meetings with my supervisor, especially for the most complex tasks, to resolve them promptly instead of getting stuck and searching for resources on my own. The meeting we had online were very informative and all of the details of the conversation were recorded for the future changes. Another crucial step would involve initiating swift communication with the software companies I intend to test to gather information about the programming languages they support and the available resources for the tasks I plan to undertake in the later stages of my project. It would be advantageous to ascertain if they have experts in the field who could provide support or guidance. Additionally, starting communication early would help in case unforeseen circumstances arise, as was the case with the third objective, to mitigate risks and ensure the generation of other data values.
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+## 7 Glossary
+$\color{yellow}{Scalability}$ – is the ability to handle a continually increasing workload without a significant impact on performance. This includes the requirement that the system's architecture can adapt to varying workloads and that it remains reliable, capable of performing at its designed capacity.
+
+$\color{yellow}{Distributed \ systems}$ – are connected system devices that collaborate in order to finish the pre-defined tasks as well as any suitable future tasks. 
+
+$\color{yellow}{Data-centric}$ – corresponds to approach where the data keeps the central role or value in the system operations. It is often that systems are designed with this approach to maximize organisational aspects of data. 
+
+$\color{yellow}{Quality \ of \ Service}$ – is a set of policies/parameters that intend to identify how system communication should behave and what it need to possess in order to adhere to requirements and limitations. 
+API – is the Application Programming Interface, which encapsulates set of rules, protocols to allows software applications to exchange information. These applications can also interact by providing services to each other.  
+
+$\color{yellow}{Cumulative \ Distributed \ Function}$ – also known as CDF is a mathematical function, which describes the chance of a random variable to be equal to or less than a specific value. 
+Smoothed estimate Cumulative Distributed Function -  is the version of CDF where the visualisation has been smoothed in hope to easily show the data points falling into certain value range. It is common practice to give more intuitive understanding of cumulative probability. 
 
 <sub>[[Top 🢁](#contents)]</sub>
