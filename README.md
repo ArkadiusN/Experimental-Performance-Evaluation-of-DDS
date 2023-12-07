@@ -9,7 +9,8 @@
 Submission of the master's thesis in the 4th year at City, University of London.\
 Date: 02/10/2023\
 Author: [Arkadiusz Nowacki](https://github.com/ArkadiusN)\
-Contributors: **Dr. Vladimir Stankovic**  & **Kaleem Peeroo**
+Project Mark: $\color{white}{68\%}$\
+Contributors: **[Dr. Vladimir Stankovic](https://www.city.ac.uk/about/people/academics/vladimir-stankovic)** & **[Kaleem Peeroo](https://www.researchgate.net/profile/Kaleem-Peeroo)** & **[Javier Morales Castro (RTI)](https://community.rti.com/users/jmorales)**
 
 ---
 
@@ -77,9 +78,16 @@ The project was undertaken to obtain the results of the testing campaign using a
 - **[5 Discussion](#5-discussion)**
   - [5.1 Objective 1: Plugin for other DDS solution](#51-objective-1-plugin-for-other-dds-solution)
   - [5.2 Objective 2: DDS experimental performance metrics](#52-objective-2-dds-experimental-performance-metrics)
-  - [5.3	Objective 3: DDS security enabled performance metrics](#53-objective-3-dds-security-enabled-performance-metrics)
+  - [5.3 Objective 3: DDS security enabled performance metrics](#53-objective-3-dds-security-enabled-performance-metrics)
 - **[6 Evaluation, Reflections and Conclusions](#6-evaluation-reflections-and-conclusions)**
-- **[7 Glossary](#7-glossary)**
+- **[Glossary](#glossary)**
+- **[Appendix A – Project proposal](#appendix-a-project-proposal)**
+- **[Appendix B – Project plan](#appendix-b-project-plan)**
+- **[Appendix C – Test harnessing with Perftest](#appendix-c-test-harnessing-with-perftest)**
+- **[Appendix D – Results in the form of the spreadsheet](#appendix-d-results-in-the-form-of-the-spreadsheet)**
+- **[Appendix E – Code to produce the graphs](#appendix-e-code-to-produce-the-graphs)**
+- **[Appendix F – Java plugin implementation](#appendix-f-java-plugin-implementation)**
+- **[Appendix G – Message exchange with RTI’s support team](#appendix-g-message-exchange-with-rtis-support-team)**
 
 <sub>_Still not finding what you are looking for? Try the [Wikipedia](<https://en.wikipedia.org/wiki/Data_Distribution_Service>)!_</sub>
 
@@ -606,7 +614,7 @@ The first set of plots from Figure 11 presents the so-called ‘value by value�
 
 Figure 12 has showcased how both the minimum and maximum time of latency have changed throughout the whole test, and their right-side version introduces the idea of the data points being closely together when it comes to their range upon removing the three initial $\color{white}{x}$ and $\color{white}{y}$ values.
 
-At last, we have two versions of the Cumulative Distribution Function (CDF), where Figure 13 shows a smooth estimate, which does not start from zero. In contrast to it, there is also Figure 14 with the exact CDF going through each value of ‘Average latency (microseconds)’. Understanding this function is about looking at the x-axis values we want to study (such as average latency) and then looking at the probability on the y-axis for the random value to be less than or equal to the corresponding x-value (Byju’s, 2019). The density of the values at a certain point of the x-axis is what is stressed on the first plot, whereas the second plot describes the proportion of the data points falling below or being equal to a specific x-axis value. For example, there exists a proportion of data points being lower or equal to the value in the range of 1900 up to 3500 with a proportion of 0.82. 
+At last, we have two versions of the Cumulative Distribution Function (CDF), where Figure 13 shows a smooth estimate, which does not start from zero. In contrast to it, there is also Figure 14 with the exact CDF going through each value of ‘Average latency (microseconds)’. Understanding this function is about looking at the x-axis values we want to study (such as average latency) and then looking at the probability on the y-axis for the random value to be less than or equal to the corresponding x-value [(Byju’s, 2019)](https://byjus.com/maths/cumulative-distribution-function/). The density of the values at a certain point of the x-axis is what is stressed on the first plot, whereas the second plot describes the proportion of the data points falling below or being equal to a specific x-axis value. For example, there exists a proportion of data points being lower or equal to the value in the range of 1900 up to 3500 with a proportion of 0.82. 
 
 <p align="center">
 <img src="img/Figure11.png" height="545" style="border: 5px solid #181414"/>
@@ -835,7 +843,7 @@ It's worth noting that the starting point was also larger, and Figure 40 achieve
 ## 5 Discussion
 This chapter examines the project's results and puts them against the identified objectives to determine whether they have been achieved. It also delves into the broader context of other theoretical work in the related field to assess the validity and generalisability of the results. Finally, we explore the implications and recommendations that arise from these findings.
 
-### 5.1	Objective 1: Plugin for other DDS solution 
+### 5.1	Objective 1 Plugin for other DDS solution 
 The first objective, which aimed "To identify a benchmark application that can be repurposed or enhanced to deploy against at least two Data Distribution Services without Security-enabled features" was partially achieved. Benchmarking software was first identified in section 2.4.3, and the rationale for its selection was proposed in section 3.1.1, which was further detailed in the implementation (section 3.3.1). It successfully performed the test harnessing without the security features enabled, as emphasized in the implementation, with full details provided in the parameter and configuration view.
 
 Information was gathered from sources such as compilation and other sections of the documentation (Community Real-Time Innovations, 2022) to understand how to potentially repurpose or enhance the architecture for deployment with other non-RTI DDS solutions. Efforts were made to progress with the design and development to eventually achieve deployment on the other middleware. However, the development progress was limited due to references provided by Wang, H. (Community Real-Time Innovations, 2020), where the syntax was architecture-specific and constrained resources and limited support played significant roles (see Appendix G).
@@ -848,7 +856,7 @@ Furthermore, when choosing testing software, the author could consider options t
 
 <sub>[[Top 🢁](#contents)]</sub>
 
-### 5.2	Objective 2: DDS experimental performance metrics
+### 5.2	Objective 2 DDS experimental performance metrics
 The second objective, which aimed "To produce experimental measurements for the Data Distribution Services of choice that are analysable, evaluable, and subjected to comparison while encapsulated in a report at the end of the project" has been fully achieved. Distributed systems performance measures, including both latency and throughput as elaborated in section 2.3, were generated and collected by taking batches of information from the benchmark. The information obtained has addressed the issues identified in section 2.1.4, where the gap in the performance analysis of the DDS was recognized.
 
 If we were to break down the objective, it can also be stated that the analysis exists within the spreadsheet encapsulating the DDS system performance, complemented by sections such as 4.2, 4.3, and 4.4. These sections provide great detail in tabular form, containing all of the data and observations derived from it. Additionally, they delve into data patterns, anomalies, and trends under constraints to demonstrate how much the data has changed and whether the changes were positive as the testing campaign and analysis continued. They include comparisons between tests, exploring the variables used (such as standard deviation) to enrich the findings and emphasize the possibility of evaluation. Various perspectives, ranging from the time between tests to configurational settings and unforeseen aspects, are discussed to showcase result changes (section 4.3).
@@ -861,7 +869,7 @@ The implications of this work are the numerous insights into DDS performance, pr
 
 <sub>[[Top 🢁](#contents)]</sub>
 
-### 5.3	Objective 3: DDS security enabled performance metrics
+### 5.3	Objective 3 DDS security enabled performance metrics
 The final objective was "To desirably use the benchmark application on Data Distribution Services with their additional security configuration enabled to expand the findings". While this objective was not a primary focus, it was kept as an option in case it could enhance the project's quality. The implementation of security-enabled tests was described in Section 3.3.1, as the possibility was initially outlined in the software tools (see Section 3.1.1).
 
 Efforts to conduct these tests spanned from the beginning of the testing harness phase to the end of the project. Unfortunately, the conversion was not realized due to an unknown issue that could not be resolved within the project's limited timeframe, even with the company's documentation and message exchange (see Appendix G).
@@ -897,7 +905,7 @@ If I were to undertake the project again, I would schedule more meetings with my
 
 <sub>[[Top 🢁](#contents)]</sub>
 
-## 7 Glossary
+## Glossary
 $\color{yellow}{Scalability}$ – is the ability to handle a continually increasing workload without a significant impact on performance. This includes the requirement that the system's architecture can adapt to varying workloads and that it remains reliable, capable of performing at its designed capacity.
 
 $\color{yellow}{Distributed \ systems}$ – are connected system devices that collaborate in order to finish the pre-defined tasks as well as any suitable future tasks. 
@@ -909,5 +917,104 @@ API – is the Application Programming Interface, which encapsulates set of rule
 
 $\color{yellow}{Cumulative \ Distributed \ Function}$ – also known as CDF is a mathematical function, which describes the chance of a random variable to be equal to or less than a specific value. 
 Smoothed estimate Cumulative Distributed Function -  is the version of CDF where the visualisation has been smoothed in hope to easily show the data points falling into certain value range. It is common practice to give more intuitive understanding of cumulative probability. 
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+## Appendix A Project proposal
+[Download Project Proposal submitted as the initial step of the project (PDF format)](https://github.com/ArkadiusN/SchoolTracker/blob/master/pdf-files/Arkadiusz_Nowacki_Proposal_RMPI.pdf) ⇩
+
+[Download Project Proposal submitted as the initial step of the project (DOCX format)](https://github.com/ArkadiusN/SchoolTracker/blob/master/docx-files/Arkadiusz_Nowacki_Proposal_RMPI.docx) ⇩
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+## Appendix B Project plan
+<p align="center">
+<img src="img/ProjectPlan.png" height="435" style="border: 5px solid #181414"/>
+
+<em>Star * should be understood as an achieved milestone.</em>
+</p>
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+## Appendix C Test harnessing with Perftest
+<p align="center">
+<img src="img/TestHarness0.png" height=700" style="border: 5px solid #181414"/>
+
+<em>Code and Makefiles generator (rtiddsgen)</em>
+</p>
+
+<p align="center">
+<img src="img/TestHarness1A.png" height=700" style="border: 5px solid #181414"/>
+
+<em>Test 1A: Latency test (Publisher) (Throughput mode)</em>
+</p>
+
+<p align="center">
+<img src="img/TestHarness1B.png" height=700" style="border: 5px solid #181414"/>
+
+<em>Test 1B: Throughput test (Subscriber) (Throughput mode)</em>
+</p>
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+<p align="center">
+<img src="img/TestHarness2A.png" height=700" style="border: 5px solid #181414"/>
+
+<em>Test 2A: Latency test (Publisher) (Latency mode)</em>
+</p>
+
+<p align="center">
+<img src="img/TestHarness2B.png" height=700" style="border: 5px solid #181414"/>
+
+<em>Test 2B: Throughput test (Subscriber) (Latency mode)</em>
+</p>
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+<p align="center">
+<img src="img/TestHarness3A.png" height=700" style="border: 5px solid #181414"/>
+
+<em>Test 3A: Latency test (Publisher) (Throughput mode)</em>
+</p>
+
+<p align="center">
+<img src="img/TestHarness3B.png" height=700" style="border: 5px solid #181414"/>
+
+<em>Test 3B: Throughput test (Subscriber) (Throughput mode)</em>
+</p>
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+<p align="center">
+<img src="img/TestHarness4A.png" height=700" style="border: 5px solid #181414"/>
+
+<em>Test 4A: Latency test (Publisher) (Latency mode)</em>
+</p>
+
+<p align="center">
+<img src="img/TestHarness4B.png" height=700" style="border: 5px solid #181414"/>
+
+<em>Test 4B: Throughput test (Subscriber) (Latency mode)</em>
+</p>
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+## Appendix D Results in the form of the spreadsheet 
+
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+## Appendix E Code to produce the graphs 
+
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+## Appendix F Java plugin implementation
+
+
+<sub>[[Top 🢁](#contents)]</sub>
+
+## Appendix G Message exchange with RTI’s support team
+
 
 <sub>[[Top 🢁](#contents)]</sub>
