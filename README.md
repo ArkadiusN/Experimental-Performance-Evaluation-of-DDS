@@ -9,7 +9,7 @@
 Submission of the master's thesis in the 4th year at City, University of London.\
 Date: 02/10/2023\
 Author: [Arkadiusz Nowacki](https://github.com/ArkadiusN)\
-Project Mark: $\color{white}{68\%}$\
+Project Mark: 68%\
 Contributors: **[Dr. Vladimir Stankovic](https://www.city.ac.uk/about/people/academics/vladimir-stankovic)** & **[Kaleem Peeroo](https://www.researchgate.net/profile/Kaleem-Peeroo)** & **[Javier Morales Castro (RTI)](https://community.rti.com/users/jmorales)**
 
 ---
@@ -76,9 +76,9 @@ The project was undertaken to obtain the results of the testing campaign using a
     - [4.4.3 Plots of Publisher’s latency (Campaign two)](#443-plots-of-publishers-latency-campaign-two)
     - [4.4.4 Plots of Subscriber’s throughput (Campaign two)](#444-plots-of-subscribers-throughput-campaign-two)
 - **[5 Discussion](#5-discussion)**
-  - [5.1 Objective 1: Plugin for other DDS solution](#51-objective-1-plugin-for-other-dds-solution)
-  - [5.2 Objective 2: DDS experimental performance metrics](#52-objective-2-dds-experimental-performance-metrics)
-  - [5.3 Objective 3: DDS security enabled performance metrics](#53-objective-3-dds-security-enabled-performance-metrics)
+  - [5.1 Objective 1 Plugin for other DDS solution](#51-objective-1-plugin-for-other-dds-solution)
+  - [5.2 Objective 2 DDS experimental performance metrics](#52-objective-2-dds-experimental-performance-metrics)
+  - [5.3 Objective 3 DDS security enabled performance metrics](#53-objective-3-dds-security-enabled-performance-metrics)
 - **[6 Evaluation, Reflections and Conclusions](#6-evaluation-reflections-and-conclusions)**
 - **[Glossary](#glossary)**
 - **[Appendix A – Project proposal](#appendix-a-project-proposal)**
@@ -107,7 +107,7 @@ Yet, a notable void still exists in a resource that would focus on the domain of
 Considering all the information gathered during the preliminary literature review before starting the project, I deliberately chose to undertake this effort. The decision was driven by the recognition of gaps in a subject that is both intriguing and challenging.
 
 ## 1.2 Aim and Objectives
-The aim of this project is to experimentally evaluate the performance of a set of DDS software solutions and compare their results under the condition of having the security feature disabled and possibly enabled once the viable product of the project is achieved (see Appendix A).
+The aim of this project is to experimentally evaluate the performance of a set of DDS software solutions and compare their results under the condition of having the security feature disabled and possibly enabled once the viable product of the project is achieved [(see Appendix A)](#appendix-a-project-proposal).
 
 The project has the following objectives:
 1. To identify a benchmark application that can be repurposed or enhanced to deploy against at least two of Data Distribution Services without Security-enabled features.
@@ -126,7 +126,7 @@ The project has the following testable results:
 3. Numerical, tabular/graphical and textual sets of information where the security option has been enabled, changing the overall results and then evaluated textually and encapsulated in the report.
 
 ## 1.4 Project Beneficiaries
-The beneficiaries of the work consist of three groups (see Appendix A) who gain from having access to the information about the obtained, processed, and analysed performance data of DDS solutions:
+The beneficiaries of the work consist of three groups [(see Appendix A)](#appendix-a-project-proposal) who gain from having access to the information about the obtained, processed, and analysed performance data of DDS solutions:
 
 1. Research teams within the DDS companies, seeking ways to enhance their DDS solution and become the best solution available in the market, stand to gain financially.
 
@@ -137,7 +137,7 @@ The beneficiaries of the work consist of three groups (see Appendix A) who gain 
 4. Researchers interested in the performance of publish-subscribe real-time distributed systems.
 
 ## 1.5 Methods Outline and Project Plan
-For the reason that project results require use of the DDS benchmarking software to gather data for subsequent analysis from both the benchmarking implementor and one competitor, the latter one has to correspond too architecture of the initial vendor. Procedure of developing or adjusting one testing application for the architecture of other DDS provider brings high uncertainty and technical complexity because it was not done before or the resources may be densely limited or acquired under special agreements. The plan for the development adheres to Agile methodology, while activities related to main performance measuring are performed in an iterative and concurrent manner from the middle to end stages of August, what is comparable with Scrum framework for Agile (see Appendix B). Details are for view in the project plan in Figure 0. The predicted consequence of such methodology ought to make design and implementation of test harness possible as well as provide the stability and adaptability during project’s continuity.
+For the reason that project results require use of the DDS benchmarking software to gather data for subsequent analysis from both the benchmarking implementor and one competitor, the latter one has to correspond too architecture of the initial vendor. Procedure of developing or adjusting one testing application for the architecture of other DDS provider brings high uncertainty and technical complexity because it was not done before or the resources may be densely limited or acquired under special agreements. The plan for the development adheres to Agile methodology, while activities related to main performance measuring are performed in an iterative and concurrent manner from the middle to end stages of August, what is comparable with Scrum framework for Agile [(see Appendix B)](#appendix-b-project-plan). Details are for view in the project plan in Figure 0. The predicted consequence of such methodology ought to make design and implementation of test harness possible as well as provide the stability and adaptability during project’s continuity.
 
 <p align="center">
 <img src="img/ProjectPlan.png" height="380" style="border: 5px solid #181414"/>
@@ -319,7 +319,7 @@ Command Prompt is a shell and a scripting language, which provides the command-l
 
 Shell acts on the requirements of the project by allowing:
 
--	The execution of the $\color{yellow}{.bat}$, $\color{yellow}{.jar}$ and $\color{yellow}{.exe}$ scripts required to utilize the RTI Code Generator (rtiddsgen) tool to generate part of the code (see Appendix C) that is used to work with makefile/project files complication. Step of this form has to be completed before the execution of the latency and throughput testing.
+-	The execution of the $\color{yellow}{.bat}$, $\color{yellow}{.jar}$ and $\color{yellow}{.exe}$ scripts required to utilize the RTI Code Generator (rtiddsgen) tool to generate part of the code [(see Appendix C)](#appendix-c-test-harnessing-with-perftest) that is used to work with makefile/project files complication. Step of this form has to be completed before the execution of the latency and throughput testing.
 
 -	The use of the build script parameters provides the choice of the testing platform in a similar way to the choice of the programming language. Similarly, the custom configuration with parameters simplifies the outputs and testing procedure to look at a specific sample size range (in bytes). 
 
@@ -328,7 +328,7 @@ Shell acts on the requirements of the project by allowing:
 -	Visual indication of what has to be debugged to deploy the benchmarking software to an alternative DDS solution.
 
 #### 3.1.4 Jupyter Notebook with Python 3
-Jupyter Notebook is an open-source web-based application that is used in pursuance of creating and sharing documents. Documents can contain different types of information, from markdown, code, and mathematical formulas to pieces of text. Subsequently, it possesses hundreds of kernels, some corresponding to programming languages or external software, like Julia, Python, and R [(Driscoll, M., 2018)](https://realpython.com/jupyter-notebook-introduction/). The strength of this application is essentially in the adaptability to increasingly higher needs as the work evolves. The project requires a more sophisticated solution for high-level data analysis, evaluation, and comparison, so the application answers these conditions by working with Python 3. Moreover, a version of this language with easily accessible extensive libraries for data science is also available in the notebook environment. The work of the project can be done to the full extent by using libraries such as pandas, Matplotlib, and NumPy (see Appendix E). 
+Jupyter Notebook is an open-source web-based application that is used in pursuance of creating and sharing documents. Documents can contain different types of information, from markdown, code, and mathematical formulas to pieces of text. Subsequently, it possesses hundreds of kernels, some corresponding to programming languages or external software, like Julia, Python, and R [(Driscoll, M., 2018)](https://realpython.com/jupyter-notebook-introduction/). The strength of this application is essentially in the adaptability to increasingly higher needs as the work evolves. The project requires a more sophisticated solution for high-level data analysis, evaluation, and comparison, so the application answers these conditions by working with Python 3. Moreover, a version of this language with easily accessible extensive libraries for data science is also available in the notebook environment. The work of the project can be done to the full extent by using libraries such as pandas, Matplotlib, and NumPy [(see Appendix E)](#appendix-e-code-to-produce-the-graphs). 
 
 The reasons for choosing this combination of software are:
 
@@ -363,7 +363,7 @@ First of all, the design of the spreadsheet was informed by the existing perform
 
 There can be observed a standard to provide the scripts, details of the environment, hardware, or pre-configuration. The spreadsheet has also been designed based on the tabular form, often utilized in research and reporting, accepted by fields such as science, engineering, and data analysis. In the case of the performance metrics spreadsheet, it was decided to decompose the forms of measurement so they have a dedicated space. On the contrary, RTI has showcased the collection of their measurements by merging two forms, where the first was presented as a table while the other was graph based on the table [(Real-Time Innovations, 2022)](https://community.rti.com/static/documentation/perftest/current/tutorials/performance_validation.html). Once more, there existed the same standard to provide additional contextual information about the parameters, choices, and hardware, so the project had to abide by this practice. The decision was to add testing configuration, where “Machine specification” and “Perftest specification” will be listed on the main page of the spreadsheet. Moreover, each test was meticulously described and documented, providing details about the parameter configuration along with benchmark software outputs, which included an extensive “Perftest configuration” and “Transport information”.
 
-To elaborate, the project’s spreadsheet structure was developed based on the author's experience in working with data from the [Office for National Statistics (2023)](https://www.gov.uk/government/organisations/office-for-national-statistics ), which is the UK’s largest independent producer of official statistics and the recognized national statistical institute of the UK. The precise statistics used for the spreadsheet architecture are from “Internet users, UK: 2020” [(Office for National Statistics Organisations, 2020)](https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers/2020), which served as inspiration for the style. The table of contents and contact information were expanded from Figure 9 to include additional testing configuration as well as the necessary web pages in case a user would require more background information. The professional architecture, originally shown in Figure 10, has been converted into a real interface upon opening the file of the testing campaign (see Appendix D).
+To elaborate, the project’s spreadsheet structure was developed based on the author's experience in working with data from the [Office for National Statistics (2023)](https://www.gov.uk/government/organisations/office-for-national-statistics ), which is the UK’s largest independent producer of official statistics and the recognized national statistical institute of the UK. The precise statistics used for the spreadsheet architecture are from “Internet users, UK: 2020” [(Office for National Statistics Organisations, 2020)](https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers/2020), which served as inspiration for the style. The table of contents and contact information were expanded from Figure 9 to include additional testing configuration as well as the necessary web pages in case a user would require more background information. The professional architecture, originally shown in Figure 10, has been converted into a real interface upon opening the file of the testing campaign [(see Appendix D)](#appendix-d-results-in-the-form-of-the-spreadsheet).
 
 At last, based on the characteristics of the information, which were previously described, it was decided to pursue these decisions. Statistics that involve math and rely upon the calculation of numbers are clearly associated with the previous choices, and the only matter is how the values were chosen or interpreted with further activities [(Libretexts, p. 1, 2022)](https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Introductory_Statistics_(Lane)/01%3A_Introduction_to_Statistics/1.01%3A_What_are_Statistics ).
 
@@ -386,7 +386,7 @@ By suggesting that the form of performance measurements ought to be decomposed a
 
 ### 3.3 Implementation
 #### 3.3.1 Implementation of the test harness and DDS system performance metrics in the spreadsheet
-The project was developed using RTI’s benchmarking application, together with Command Line Interface, and Microsoft Excel. The choice of software tools was backed by the fact that one supports the action of the next one; for instance, the benchmarking application can be executed via commands rather than by slower Visual Studio software. During the testing campaign that took place from the middle of August (22/08/2023) to the beginning of September (04/09/2023), the creation of the worksheet containing the data batches captured during the campaign occurred (see Appendix B).  
+The project was developed using RTI’s benchmarking application, together with Command Line Interface, and Microsoft Excel. The choice of software tools was backed by the fact that one supports the action of the next one; for instance, the benchmarking application can be executed via commands rather than by slower Visual Studio software. During the testing campaign that took place from the middle of August (22/08/2023) to the beginning of September (04/09/2023), the creation of the worksheet containing the data batches captured during the campaign occurred [(see Appendix B)](#appendix-b-project-plan).  
 
 Based on getting acquainted with the information during the “benchmark documentation reading” (see Figure 0) stage from the 20th of July, it was feasible to perform activities to make the software ready for testing. The initial step was to download the crucial component, the 'Connext DDS' installation, paired with requesting a license agreement file. Ask for this file was done via a special form on the RTI’s page and collected with the use of an email associated with the educational organization for research or other non-commercial activities under the free trial (Real-Time Innovations, 2023). Once more, it had to be accompanied by the open-source Perftest 4.1 repository download and placed into the dedicated directory for simpler navigation. These actions were associated with going through the instructional document on this web page. A sub-directory, called “Binaries”, was under the release page, where the $\color{yellow}{.zip}$ folder was downloaded with the answer to the operating system architecture and the already-in-place installation. Compressed folder was extracted into the 'rtiperftest' directory so that each folder ranging from 'doc,' 'bin,' and 'resource' was placed there.
 
@@ -413,7 +413,7 @@ set RTI_PERFTEST_ARCH=i86Win64VS2022 'VS2022 meaning Visual Studio installation'
 C:\Program Files\MicrosoftVisualStudio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\Hostx64\x64
  ```
 
-As explained by the “Compilation” section [(Community Real-Time Innovations, 2022)](https://community.rti.com/static/documentation/perftest/current/compilation.html ) the $\color{yellow}{build.bat}$ file in our directory was used to invoke the code generator, which has created the necessary code and makefiles (see Appendix C), which adhere to the architecture provided earlier. To elaborate, the script was utilized with supplementary arguments defining the specifics of the build, which were:
+As explained by the “Compilation” section [(Community Real-Time Innovations, 2022)](https://community.rti.com/static/documentation/perftest/current/compilation.html ) the $\color{yellow}{build.bat}$ file in our directory was used to invoke the code generator, which has created the necessary code and makefiles [(see Appendix C)](#appendix-c-test-harnessing-with-perftest), which adhere to the architecture provided earlier. To elaborate, the script was utilized with supplementary arguments defining the specifics of the build, which were:
 
 ```bash 
 -platform x64Win64VS2022 'Used to define the platform for which the script was going to compile
@@ -488,7 +488,7 @@ As can be expected, the subscriber side has also used the $\color{yellow}{.jar}$
 defined by other parameters'
 ``` 
 
-Testing commenced on a system running the Windows 10 operating system, configured with the architecture $\color{white}{i86Win64VS2022}$, accompanied by 16 gigabytes of Random-Access Memory (RAM) and powered by an Intel Core i5-8300H CPU, operating at 2.30GHz (2304 MHz) with 4 cores and 8 logical processors. The networking machine is a router with the specification of Hub 3.0 and type VMDG505/TG2492LG-VM. With two concurrently running command-line interfaces (one publisher and one subscriber), the test was started with the defined sample size in bytes that kept the role of positive powers of two (also called binary powers) [(Exploringbinary, 2008)](https://www.exploringbinary.com/the-powers-of-two/). Therefore, the data sizes have started from 32 to up to 40 thousand, where the upper limit of 65536 was not reached due to errors causing the stoppage of the tests. They were running for a total time of 6 minutes due to setting up the delay between each data size sent, and this timing involved both the Publisher and Subscriber. Moreover, the test was halted after 6 minutes when the last data size test was done, which was the included chosen upper limit. During this time, the testing activities were done at the same period, which was the end of August (see Appendix B), to ensure that no additional network stress or any machine-related issues were going to affect the end measurements. The type of tests were in two modes: the first one was named as “THROUGHPUT TEST”, whereas the other was “LATENCY TEST (Ping-Pong test)”. Interest lies in the metrics of latency and throughput, which are the standard performance measures for computer-based systems and distributed systems. The total number of test runs was four with the security disabled feature, where half of the test was in one mode for both Publisher and Subscriber, while the other was done in the other mode. After examining the test results, there existed twelve rows of data based on the specified data size range for each entity.
+Testing commenced on a system running the Windows 10 operating system, configured with the architecture $\color{white}{i86Win64VS2022}$, accompanied by 16 gigabytes of Random-Access Memory (RAM) and powered by an Intel Core i5-8300H CPU, operating at 2.30GHz (2304 MHz) with 4 cores and 8 logical processors. The networking machine is a router with the specification of Hub 3.0 and type VMDG505/TG2492LG-VM. With two concurrently running command-line interfaces (one publisher and one subscriber), the test was started with the defined sample size in bytes that kept the role of positive powers of two (also called binary powers) [(Exploringbinary, 2008)](https://www.exploringbinary.com/the-powers-of-two/). Therefore, the data sizes have started from 32 to up to 40 thousand, where the upper limit of 65536 was not reached due to errors causing the stoppage of the tests. They were running for a total time of 6 minutes due to setting up the delay between each data size sent, and this timing involved both the Publisher and Subscriber. Moreover, the test was halted after 6 minutes when the last data size test was done, which was the included chosen upper limit. During this time, the testing activities were done at the same period, which was the end of August [(see Appendix B)](#appendix-b-project-plan), to ensure that no additional network stress or any machine-related issues were going to affect the end measurements. The type of tests were in two modes: the first one was named as “THROUGHPUT TEST”, whereas the other was “LATENCY TEST (Ping-Pong test)”. Interest lies in the metrics of latency and throughput, which are the standard performance measures for computer-based systems and distributed systems. The total number of test runs was four with the security disabled feature, where half of the test was in one mode for both Publisher and Subscriber, while the other was done in the other mode. After examining the test results, there existed twelve rows of data based on the specified data size range for each entity.
 
 To logically separate the tests and add an order to them, it was decided to perform each test in pairs. The meaning behind using pairs of entities was to reduce the jumps between testing pages and allow viewers to see which entities communicated and whether the given test was about latency or throughput. While the tests are concatenated together, similar to low-level data fusion, where “datablocks are simply concatenated and then analysed together as one single block” [(Smilde, A.K., Næs T., Liland H.K., p. 5, 2022)](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119600978), the importance of such a method lies in demonstrating the unification between two parties in communication, rather than consolidating the results in one place. Another essential point is that each unit in the pair was inherently accompanied by an alphabetical value describing its character (Publisher or Subscriber) in the network communication. While the mode of the test can be changed by the `-latencyTest` parameter, the spreadsheet needs to emphasize the fact that the Publisher will output the latency information while the Subscriber will show throughput. This distinction was detailed in the documentation, stating that “in this case, we are interested in the latency results, not in the throughput results (we are doing a ping-pong test, so we cannot expect high throughput). Therefore, we need to look at the results displayed on the Publisher side”.
 
@@ -501,12 +501,12 @@ The data batches have appeared based on exchange happening, which were communica
 
 The final endeavour involved collecting information using Perftest 4.1 with additional security features enabled, aiming to expand on the findings and increase the scale of the testing campaign. The process closely mirrored what was done previously, but this time, the `--secure` option, combined with `--openssl-home`, needed to be incorporated to compile the files under secure conditions using the OpenSSL libraries, essential for security testing.
 
-However, an issue arose when, after successful compilation, the execution of the Java $\color{yellow}{.bat}$ file became impossible due to a request for the "Governance" file. Contact with the RTI team led to a solution for this problem (see Appendix G). Once this issue was resolved, another problem emerged, which remained unresolved, involving the disabling of data collection under the same configuration (see Appendix G).
+However, an issue arose when, after successful compilation, the execution of the Java $\color{yellow}{.bat}$ file became impossible due to a request for the "Governance" file. Contact with the RTI team led to a solution for this problem [(see Appendix G)](#appendix-g-message-exchange-with-rtis-support-team). Once this issue was resolved, another problem emerged, which remained unresolved, involving the disabling of data collection under the same configuration [(see Appendix G)](#appendix-g-message-exchange-with-rtis-support-team).
 
 #### 3.3.2 Implementation of the test harness document for visualising DDS system performance metrics
 The technical implementation of the document, whose role is to demonstrate the graphical context of the amassed information, was created in the Jupyter Notebook. The decision to use markdown was made, similar to a professional journal commonly used in the context of data science. The introduction is included in the file to provide background information that the viewer might be interested in, along with the motives behind the work and potential stakeholders of such material. Essentially, the configurational aspects of the actions performed are included with sufficient details that allow one to understand the context and steps taken. These same details were elaborated on in the previous section.
 
-Beginning of the analysis programmatically ensures that the correct data science libraries were added to clear, transform, and plot the data of the previously finished comprehensive spreadsheet provided in the code (see Appendix E). The work took place at the end of August and early September during the stage of the “Testing campaign on vendor's DDS solution” (see Appendix B).
+Beginning of the analysis programmatically ensures that the correct data science libraries were added to clear, transform, and plot the data of the previously finished comprehensive spreadsheet provided in the code [(see Appendix E)](#appendix-e-code-to-produce-the-graphs). The work took place at the end of August and early September during the stage of the “Testing campaign on vendor's DDS solution” [(see Appendix B)](#appendix-b-project-plan).
 
 Data cleaning activities have started with column renaming for them to work without unnecessary characters or empty spaces, causing erroneous behaviour. Then the index was set for the tables to have a unique identifier called “id”. The consequence was a clearer view of the number of rows in the given worksheet table.
 
@@ -529,7 +529,7 @@ The primary goal was to migrate the plugin, originally designed for the "vSOME/I
 3.	Align it with the Java API documentation provided by OpenDDS or OpenSplice.
 4.	Compile and execute the Perftest on a single solution.
 
-With a plan and initial design in place, the development phase commenced, where the plugin's architecture was rewritten for the chosen programming language (see Appendix F). However, as the complexity increased due to the transition between languages and the specific API syntax, more questions arose, and progress was hindered. Starting from August 22nd, the testing campaign needed to commence to accumulate the necessary data batches. Consequently, the project could not remain in the development stage, as per the methodology, as it required testing and final deployment to conclude the planned phase. Following the "Data collection of the testing campaign," communication with the RTI team was initiated to gather more details about the previously planned tasks to possibly get the unknown or company specific resource, which plugin could benefit from.
+With a plan and initial design in place, the development phase commenced, where the plugin's architecture was rewritten for the chosen programming language [(see Appendix F)](#appendix-f-java-plugin-implementation). However, as the complexity increased due to the transition between languages and the specific API syntax, more questions arose, and progress was hindered. Starting from August 22nd, the testing campaign needed to commence to accumulate the necessary data batches. Consequently, the project could not remain in the development stage, as per the methodology, as it required testing and final deployment to conclude the planned phase. Following the "Data collection of the testing campaign," communication with the RTI team was initiated to gather more details about the previously planned tasks to possibly get the unknown or company specific resource, which plugin could benefit from.
 
 <sub>[[Top 🢁](#contents)]</sub>
 
@@ -545,7 +545,7 @@ The data was organized within a dedicated architectural spreadsheet, and visuali
 
 ### 4.2	Test harness of DDS system performance metrics
 #### 4.2.1 Throughput mode testing results for Publisher and Subscriber Campaign one
-In the first stage of the test harnessing, the results of the Publisher and Subscriber under the condition of the mode were collected from the Perftest benchmarking software (see Appendix C), with configuration and parameters described in the previous chapter. Table 0 presents the performance measurements collected from the Publisher and stored under the test listed as ‘1A’, presenting the performance values across many statistics. Table 1 presents the same aspects but is focused on the results obtained from the Subscriber side, where metrics are about throughput (test 1B). From the first table, it can be concluded that most values of the latency tend to decrease as the sample data size increases with more rows of data, but the pattern switches at the last rows with a minimum increase across all columns, making the latency perform worse. On the other hand, while the throughput's sample size grows and total samples decrease, the average samples are going down in opposition to what average Mbps. It suggests that throughput has a sense of adaptability in speed (in 'Mbps') to handle larger sample sizes and stay reliable. 
+In the first stage of the test harnessing, the results of the Publisher and Subscriber under the condition of the mode were collected from the Perftest benchmarking software [(see Appendix C)](#appendix-c-test-harnessing-with-perftest), with configuration and parameters described in the previous chapter. Table 0 presents the performance measurements collected from the Publisher and stored under the test listed as ‘1A’, presenting the performance values across many statistics. Table 1 presents the same aspects but is focused on the results obtained from the Subscriber side, where metrics are about throughput (test 1B). From the first table, it can be concluded that most values of the latency tend to decrease as the sample data size increases with more rows of data, but the pattern switches at the last rows with a minimum increase across all columns, making the latency perform worse. On the other hand, while the throughput's sample size grows and total samples decrease, the average samples are going down in opposition to what average Mbps. It suggests that throughput has a sense of adaptability in speed (in 'Mbps') to handle larger sample sizes and stay reliable. 
 
 <p align="center">
 <img src="img/Table0.png" height="250" style="border: 5px solid #181414"/>
@@ -560,7 +560,7 @@ In the first stage of the test harnessing, the results of the Publisher and Subs
 </p>
 
 #### 4.2.2 Throughput mode testing results for Publisher and Subscriber Campaign two
-The second round of testing in the same mode on both sides of the communication happened in the same scenario, shortly after the first data was generated and collected from the 28th of August to the 3rd of September (see Appendix B). Repeatedly, a set of twelve rows of data was collected from the Publisher (test 3A). A clear difference in the second test can be observed, as across all of the statistics, the values are higher on the three initial rows in comparison to what was achieved previously. While the difference between values in both tables, Table 0 and Table 2, decreases from the middle rows, the pattern at the end rows was kept for the latency. Table 3 showcases the metrics of the throughput from test ‘3B’, where it can be concluded that the first round of testing has provided higher momentum in increasing throughput, average megabytes per second. It is especially visible when the value of ‘21386.6’ from Table 1 is compared to ‘20221.5’. While it is possible that tests could continue to underperform, it is only a speculation, and the difference between tests can be taken as a healthy difference. It is rather unlikely that network overhead or other unforeseen factors have appeared. 
+The second round of testing in the same mode on both sides of the communication happened in the same scenario, shortly after the first data was generated and collected from the 28th of August to the 3rd of September [(see Appendix B)](#appendix-b-project-plan). Repeatedly, a set of twelve rows of data was collected from the Publisher (test 3A). A clear difference in the second test can be observed, as across all of the statistics, the values are higher on the three initial rows in comparison to what was achieved previously. While the difference between values in both tables, Table 0 and Table 2, decreases from the middle rows, the pattern at the end rows was kept for the latency. Table 3 showcases the metrics of the throughput from test ‘3B’, where it can be concluded that the first round of testing has provided higher momentum in increasing throughput, average megabytes per second. It is especially visible when the value of ‘21386.6’ from Table 1 is compared to ‘20221.5’. While it is possible that tests could continue to underperform, it is only a speculation, and the difference between tests can be taken as a healthy difference. It is rather unlikely that network overhead or other unforeseen factors have appeared. 
 
 <p align="center">
 <img src="img/Table2.png" height="250" style="border: 5px solid #181414"/>
@@ -608,7 +608,7 @@ The second round of the latency test from ‘4A’ has been very beneficial acro
 
 ### 4.3 Graphical visualisation of DDS system performance metrics on throughput mode
 #### 4.3.1 Plots of Publisher's latency Campaign one
-The plotting of the acquired results was done via utilization of the Jupyter Notebook document, where a block of data scientific code (see Appendix E) was developed with the support of external libraries. Values plotted on the ‘x-axis' were always the same as considered sample size in bytes, whereas the value of ‘y’ changed within each row of plots to include each column of interest. However, the focus should be targeting the ‘Average latency (microseconds)’ and the ‘Throughput average (Mbps). 
+The plotting of the acquired results was done via utilization of the Jupyter Notebook document, where a block of data scientific code [(see Appendix E)](#appendix-e-code-to-produce-the-graphs) was developed with the support of external libraries. Values plotted on the ‘x-axis' were always the same as considered sample size in bytes, whereas the value of ‘y’ changed within each row of plots to include each column of interest. However, the focus should be targeting the ‘Average latency (microseconds)’ and the ‘Throughput average (Mbps). 
 
 The first set of plots from Figure 11 presents the so-called ‘value by value’ graphically, so the consequence is a display of changes with an increase in the data sample size during the latency test. It can be observed that the average latency gets better with the time of continually increasing the size of samples, and the zoomed-in version only confirms the pattern with some minor values going up at the y-axis. Standard deviation, which in essence presents how spread out or dispersed our data is from its average, displays that on the bottom left corner of the second row of plots; the zoomed-in version suggests low ‘std’. The result is that data points are in some way consistent and not as much spread out. On the contrary, the larger picture on the left side shows a high ‘std’, making it closer to average.
 
@@ -846,7 +846,7 @@ This chapter examines the project's results and puts them against the identified
 ### 5.1	Objective 1 Plugin for other DDS solution 
 The first objective, which aimed "To identify a benchmark application that can be repurposed or enhanced to deploy against at least two Data Distribution Services without Security-enabled features" was partially achieved. Benchmarking software was first identified in section 2.4.3, and the rationale for its selection was proposed in section 3.1.1, which was further detailed in the implementation (section 3.3.1). It successfully performed the test harnessing without the security features enabled, as emphasized in the implementation, with full details provided in the parameter and configuration view.
 
-Information was gathered from sources such as compilation and other sections of the documentation (Community Real-Time Innovations, 2022) to understand how to potentially repurpose or enhance the architecture for deployment with other non-RTI DDS solutions. Efforts were made to progress with the design and development to eventually achieve deployment on the other middleware. However, the development progress was limited due to references provided by Wang, H. (Community Real-Time Innovations, 2020), where the syntax was architecture-specific and constrained resources and limited support played significant roles (see Appendix G).
+Information was gathered from sources such as compilation and other sections of the documentation (Community Real-Time Innovations, 2022) to understand how to potentially repurpose or enhance the architecture for deployment with other non-RTI DDS solutions. Efforts were made to progress with the design and development to eventually achieve deployment on the other middleware. However, the development progress was limited due to references provided by Wang, H. (Community Real-Time Innovations, 2020), where the syntax was architecture-specific and constrained resources and limited support played significant roles [(see Appendix G)](#appendix-g-message-exchange-with-rtis-support-team).
 
 Therefore, it can be concluded that the testable result outlined in section 1.3, which was to create "software that was repurposed and used to collect information about DDS solutions from more than one firm" was not sufficiently fulfilled. An observation stemming from this outcome is that alternative software options could be explored (section 2.4.3).
 
@@ -861,7 +861,7 @@ The second objective, which aimed "To produce experimental measurements for the 
 
 If we were to break down the objective, it can also be stated that the analysis exists within the spreadsheet encapsulating the DDS system performance, complemented by sections such as 4.2, 4.3, and 4.4. These sections provide great detail in tabular form, containing all of the data and observations derived from it. Additionally, they delve into data patterns, anomalies, and trends under constraints to demonstrate how much the data has changed and whether the changes were positive as the testing campaign and analysis continued. They include comparisons between tests, exploring the variables used (such as standard deviation) to enrich the findings and emphasize the possibility of evaluation. Various perspectives, ranging from the time between tests to configurational settings and unforeseen aspects, are discussed to showcase result changes (section 4.3).
 
-Despite the aforementioned efforts, these sections provide a full picture for new interpretations and evaluation, which again aligns with the objective. Code was developed not only to encompass variables such as average latency and average throughput in Mbps but also other variables that can be correlated with data size in bytes, such as standard deviation, zoomed-in graph versions, and cumulative distribution functions (see Appendix E). The resulting visualizations that cover the metrics of interest conclude the second objective, as the report offers a comprehensive view of the data through various visualization and data display, transformation, and clearance approaches, as discussed in sections 4.3 and 4.4.
+Despite the aforementioned efforts, these sections provide a full picture for new interpretations and evaluation, which again aligns with the objective. Code was developed not only to encompass variables such as average latency and average throughput in Mbps but also other variables that can be correlated with data size in bytes, such as standard deviation, zoomed-in graph versions, and cumulative distribution functions [(see Appendix E)](#appendix-e-code-to-produce-the-graphs). The resulting visualizations that cover the metrics of interest conclude the second objective, as the report offers a comprehensive view of the data through various visualization and data display, transformation, and clearance approaches, as discussed in sections 4.3 and 4.4.
 
 In review, the information gathered in the literature review has informed the author about how companies and individuals conduct their testing campaigns (see section 2.4.2) and has provided confidence that the results and all associated activities have been executed with precision and are representative of the environment created and presented.
 
@@ -872,7 +872,7 @@ The implications of this work are the numerous insights into DDS performance, pr
 ### 5.3	Objective 3 DDS security enabled performance metrics
 The final objective was "To desirably use the benchmark application on Data Distribution Services with their additional security configuration enabled to expand the findings". While this objective was not a primary focus, it was kept as an option in case it could enhance the project's quality. The implementation of security-enabled tests was described in Section 3.3.1, as the possibility was initially outlined in the software tools (see Section 3.1.1).
 
-Efforts to conduct these tests spanned from the beginning of the testing harness phase to the end of the project. Unfortunately, the conversion was not realized due to an unknown issue that could not be resolved within the project's limited timeframe, even with the company's documentation and message exchange (see Appendix G).
+Efforts to conduct these tests spanned from the beginning of the testing harness phase to the end of the project. Unfortunately, the conversion was not realized due to an unknown issue that could not be resolved within the project's limited timeframe, even with the company's documentation and message exchange [(see Appendix G)](#appendix-g-message-exchange-with-rtis-support-team).
 
 The implication of this unresolved issue was a lack of additional data regarding how the software performs under the expected security features, which were likely to impact throughput and increase DDS latency. For future work, it might be advisable to consider changing the language and platform on which the tests are conducted to avoid such issues, possibly using more common Linux or Mac versions. Additionally, starting communication with RTI earlier in the project timeline, rather than during the project report writing phase (around September 6th), could facilitate issue identification and resolution.
 
@@ -921,13 +921,15 @@ Smoothed estimate Cumulative Distributed Function -  is the version of CDF where
 <sub>[[Top 🢁](#contents)]</sub>
 
 ## Appendix A Project proposal
-[Download Project Proposal submitted as the initial step of the project (PDF format)](https://github.com/ArkadiusN/SchoolTracker/blob/master/pdf-files/Arkadiusz_Nowacki_Proposal_RMPI.pdf) ⇩
+- [Download Project Proposal submitted as the initial step of the project (PDF format)](https://github.com/ArkadiusN/Experimental-Performance-Evaluation-of-DDS/blob/master/pdf-files/Arkadiusz_Nowacki_Proposal_RMPI.pdf) ⇩
 
-[Download Project Proposal submitted as the initial step of the project (DOCX format)](https://github.com/ArkadiusN/SchoolTracker/blob/master/docx-files/Arkadiusz_Nowacki_Proposal_RMPI.docx) ⇩
+- [Download Project Proposal submitted as the initial step of the project (DOCX format)](https://github.com/ArkadiusN/Experimental-Performance-Evaluation-of-DDS/blob/master/docx-files/Arkadiusz_Nowacki_Proposal_RMPI.docx) ⇩
 
 <sub>[[Top 🢁](#contents)]</sub>
 
 ## Appendix B Project plan
+- [Download Project Plan (XLSX format)](https://github.com/ArkadiusN/Experimental-Performance-Evaluation-of-DDS/blob/master/spreadsheets/ProjectPlan.xlsx) ⇩
+
 <p align="center">
 <img src="img/ProjectPlan.png" height="435" style="border: 5px solid #181414"/>
 
@@ -1000,21 +1002,367 @@ Smoothed estimate Cumulative Distributed Function -  is the version of CDF where
 <sub>[[Top 🢁](#contents)]</sub>
 
 ## Appendix D Results in the form of the spreadsheet 
+- [Download Spreadsheet with the values generated by the tests (XLSX format)](https://github.com/ArkadiusN/Experimental-Performance-Evaluation-of-DDS/blob/master/spreadsheets/Tests.xlsx) ⇩
 
+<p align="center">
+<img src="img/Spreadsheet1.png" height="375" style="border: 5px solid #181414"/>
+
+<em>Spreadsheet “Contents” page with all the test gathered (first-half of the page)</em>
+</p>
+
+<p align="center">
+<img src="img/Spreadsheet2.png" height="450" style="border: 5px solid #181414"/>
+
+<em>Spreadsheet “Contents” page with additional configuration details (second-half of the page)</em>
+</p>
+
+<p align="center">
+<img src="img/Spreadsheet3.png" height="290" style="border: 5px solid #181414"/>
+</p>
+
+<p align="center">
+<img src="img/Spreadsheet4.png" height="330" style="border: 5px solid #181414"/>
+</p>
+
+<p align="center">
+<img src="img/Spreadsheet5.png" height="290" style="border: 5px solid #181414"/>
+</p>
+
+<p align="center">
+<img src="img/Spreadsheet6.png" height="315" style="border: 5px solid #181414"/>
+</p>
+
+<p align="center">
+<img src="img/Spreadsheet7.png" height="280" style="border: 5px solid #181414"/>
+</p>
+
+<p align="center">
+<img src="img/Spreadsheet8.png" height="330" style="border: 5px solid #181414"/>
+</p>
+
+<p align="center">
+<img src="img/Spreadsheet9.png" height="290" style="border: 5px solid #181414"/>
+</p>
+
+<p align="center">
+<img src="img/Spreadsheet10.png" height="330" style="border: 5px solid #181414"/>
+</p>
 
 <sub>[[Top 🢁](#contents)]</sub>
 
 ## Appendix E Code to produce the graphs 
+Code is reproduced and adjusted accordingly to the test and need of the data clearance/transformation. Not much is changing, only variables and data ranges we are interested in. The code
+could definitely be improved but it was not a scope of the project and such step was constrained by time. Notebook, which provides all of the code that have generated results can be found under 
+`/python-jupyter-notebook`.
 
+- [Download Notebook with data analysis and visualisation (PDF format)](https://github.com/ArkadiusN/Experimental-Performance-Evaluation-of-DDS/blob/master/pdf-files/ExperimentalPerformanceEvaluationOfData-DistributionServiceSoftware.pdf) ⇩
+
+```bash 
+  1. #PRE CONFIG
+  2. #IMPORTS
+  3. #DISABLE WARNINGS
+  4. %matplotlib inline
+  5. import seaborn as sns
+  6. import numpy as np
+  7. import pandas as pd
+  8. import matplotlib as mpl
+  9. import matplotlib.pyplot as plt
+ 10. import warnings
+ 11. from pandas.plotting import lag_plot
+ 12. warnings.simplefilter(action='ignore', category=FutureWarning)
+ 13. warnings.filterwarnings("ignore")
+ 14. #VARIABLES
+ 15. default = None
+ 16. style = 's-'
+ 17. mSize = 9 
+ 18. col = 'deepskyblue'
+ 19. col2 = 'red'
+ 20. title_size = 18
+ 21. label_size = 16
+ 22. #FUNCTIONS
+ 23. def openFile(io, sheet_name, header, names,
+ 24.              index_col, usecols, squeeze,
+ 25.              dtype, engine, converters,
+ 26.              true_values, false_values, skiprows,
+ 27.              nrows):
+ 28.     return pd.read_excel(io, sheet_name, header, names,
+ 29.                          index_col, usecols, squeeze,
+ 30.                          dtype, engine, converters,
+ 31.                          true_values, false_values, skiprows,
+ 32.                          nrows)
+ 33. #READING CORRECT NON-EMPTY COLUMNS & ROWS
+ 34. df1 = openFile('./Tests.xlsx',
+ 35.               sheet_name = '1a',
+ 36.               header = 0,
+ 37.               names = default,
+ 38.               index_col = default,
+ 39.               usecols='B, B:F',
+ 40.               squeeze = False,
+ 41.               dtype = default,
+ 42.               engine = default,
+ 43.               converters = default,
+ 44.               true_values = default,
+ 45.               false_values = default,
+ 46.               skiprows = 3, #Changes zoom into the value, disregarding large values that minimize smaller ones
+ 47.               nrows = default)
+ 48.  
+ 49. #RENAME HEADERS
+ 50. df1.columns = ['sample_size_bytes', 'avg_us', 'std_us', 'min_us', 'max_us']
+ 51.  
+ 52. #SET INDEX
+ 53. df1.index.name = 'id'
+ 54. #ALL OF THE VALUES INCLUDED
+ 55. x0 = df1['sample_size_bytes'].to_numpy()
+ 56. y0 = df1['avg_us'].to_numpy()
+ 57.  
+ 58. #REMOVE VALUES TO "ZOOM" INTO VALUES EXCLUDING THE LARGEST/SMALLEST 
+ 59. x1 = np.delete(x0,[10,11])
+ 60. y1 = np.delete(y0,[0,1])
+ 61.  
+ 62. #REMOVE NaN VALUES
+ 63. x1 = x1[np.isfinite(x1)]
+ 64. y1 = y1[np.isfinite(y1)]
+ 65.  
+ 66. #REMOVE NUMBER "+E" NOTATION
+ 67. np.set_printoptions(suppress=True)
+ 68. #ALL OF THE VALUES INCLUDED
+ 69. x2 = df1['sample_size_bytes'].to_numpy()
+ 70. y2 = df1['std_us'].to_numpy()
+ 71.  
+ 72. #REMOVE VALUES TO "ZOOM" INTO VALUES EXCLUDING THE LARGEST/SMALLEST 
+ 73. x3 = np.delete(x2,[10,11])
+ 74. y3 = np.delete(y2,[0,1])
+ 75.  
+ 76. #REMOVE NaN VALUES
+ 77. x3 = x3[np.isfinite(x3)]
+ 78. y3 = y3[np.isfinite(y3)]
+ 79.  
+ 80. #REMOVE NUMBER "+E" NOTATION
+ 81. np.set_printoptions(suppress=True)
+ 82. #ALL OF THE VALUES INCLUDED
+ 83. x4 = df1['sample_size_bytes'].to_numpy()
+ 84. y4 = df1['min_us'].to_numpy()
+ 85.  
+ 86. #REMOVE VALUES TO "ZOOM" INTO VALUES EXCLUDING THE LARGEST/SMALLEST 
+ 87. x5 = np.delete(x4,[10,11])
+ 88. y5 = np.delete(y4,[0,1])
+ 89.  
+ 90. #REMOVE NaN VALUES
+ 91. x5 = x5[np.isfinite(x5)]
+ 92. y5 = y5[np.isfinite(y5)]
+ 93.  
+ 94. #REMOVE NUMBER "+E" NOTATION
+ 95. np.set_printoptions(suppress=True)
+ 96.  
+ 97. #ALL OF THE VALUES INCLUDED
+ 98. x6 = df1['sample_size_bytes'].to_numpy()
+ 99. y6 = df1['max_us'].to_numpy()
+100.  
+101. #REMOVE VALUES TO "ZOOM" INTO VALUES EXCLUDING THE LARGEST/SMALLEST 
+102. x7 = np.delete(x6,[10,11])
+103. y7 = np.delete(y6,[0,1])
+104.  
+105. #REMOVE NaN VALUES
+106. x7 = x7[np.isfinite(x7)]
+107. y7 = y7[np.isfinite(y7)]
+108.  
+109. #REMOVE NUMBER "+E" NOTATION
+110. np.set_printoptions(suppress=True)
+111. fix, axes = plt.subplots(4, 2, figsize = (19,15))
+112.  
+113. axes[0,0].plot(x0, y0, style, ms = mSize, color = col2)
+114. axes[0,0].yaxis.grid(True, color ="grey", alpha=0.2)
+115. axes[0,0].set_title('Average latency by sample size from Publisher', fontsize = title_size)
+116. axes[0,0].set_ylabel('Average latency (microseconds)', fontsize = label_size)
+117. axes[0,0].set_xlabel('Sample size (bytes)', fontsize = label_size)   
+118. axes[0,0].yaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+119. axes[0,0].xaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+120.  
+121. axes[0,1].plot(x1, y1, style, ms = mSize, color = col2)
+122. axes[0,1].yaxis.grid(True, color ="grey", alpha=0.2)
+123. axes[0,1].set_title('Zoomed-in average latency by sample size from Publisher', fontsize = title_size)
+124. axes[0,1].set_ylabel('Average latency (microseconds)', fontsize = label_size)
+125. axes[0,1].set_xlabel('Sample size (bytes)', fontsize = label_size) 
+126. axes[0,1].yaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+127. axes[0,1].xaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+128.  
+129. axes[1,0].plot(x2, y2, style, ms = mSize, color = col2)
+130. axes[1,0].yaxis.grid(True, color ="grey", alpha=0.2)
+131. axes[1,0].set_title('Latency standard deviation \n by sample size from Publisher', fontsize = title_size)
+132. axes[1,0].set_ylabel('Latency standard deviation (microseconds)', fontsize = label_size)
+133. axes[1,0].set_xlabel('Sample size (bytes)', fontsize = label_size)
+134. axes[1,0].yaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+135. axes[1,0].xaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+136.  
+137. axes[1,1].plot(x3, y3, style, ms = mSize, color = col2)
+138. axes[1,1].yaxis.grid(True, color ="grey", alpha=0.2)
+139. axes[1,1].set_title('Zoomed-in latency standard deviation \n by sample size from Publisher', fontsize = title_size)
+140. axes[1,1].set_ylabel('Latency standard deviation (microseconds)', fontsize = label_size)
+141. axes[1,1].set_xlabel('Sample size (bytes)', fontsize = label_size)   
+142. axes[1,1].yaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+143. axes[1,1].xaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+144.  
+145. axes[2,0].plot(x4, y4, style, ms = mSize, color = col2)
+146. axes[2,0].yaxis.grid(True, color ="grey", alpha=0.2)
+147. axes[2,0].set_title('Latency minimum time in mircoseconds \n by sample size from Publisher', fontsize = title_size)
+148. axes[2,0].set_ylabel('Latemcy minimum time (microseconds)', fontsize = label_size)
+149. axes[2,0].set_xlabel('Sample size (bytes)', fontsize = label_size)
+150. axes[2,0].yaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+151. axes[2,0].xaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+152.  
+153. axes[2,1].plot(x5, y5, style, ms = mSize, color = col2)
+154. axes[2,1].yaxis.grid(True, color ="grey", alpha=0.2)
+155. axes[2,1].set_title('Zoomed-in latency minimum time in mircoseconds \n by sample size from Publisher', fontsize = title_size)
+156. axes[2,1].set_ylabel('Latency minimum time (microseconds)', fontsize = label_size)
+157. axes[2,1].set_xlabel('Sample size (bytes)', fontsize = label_size)
+158. axes[2,1].yaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+159. axes[2,1].xaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+160.  
+161. axes[3,0].plot(x6, y6, style, ms = mSize, color = col2)
+162. axes[3,0].yaxis.grid(True, color ="grey", alpha=0.2)
+163. axes[3,0].set_title('Latency maximum time in mircoseconds \n by sample size from Publisher', fontsize = title_size)
+164. axes[3,0].set_ylabel('Latency maximum time (microseconds)', fontsize = label_size)
+165. axes[3,0].set_xlabel('Sample size (bytes)', fontsize = label_size)
+166. axes[3,0].yaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+167. axes[3,0].xaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+168.  
+169. axes[3,1].plot(x7, y7, style, ms = mSize, color = col2)
+170. axes[3,1].yaxis.grid(True, color ="grey", alpha=0.2)
+171. axes[3,1].set_title('Zoomed-in latency maximum time in mircoseconds \n by sample size from Publisher', fontsize = title_size)
+172. axes[3,1].set_ylabel('Latency maximum time (microseconds)', fontsize = label_size)
+173. axes[3,1].set_xlabel('Sample size (bytes)', fontsize = label_size)
+174. axes[3,1].yaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+175. axes[3,1].xaxis.set_major_formatter(mpl.ticker.EngFormatter(places=1))
+176.  
+177. # plt.ticklabel_format(useOffset = False)
+178. #ADJUSTING THE SPACING BETWEEN SUBPLOTS
+179. plt.subplots_adjust(left=0.1,
+180.                     bottom=0.1, 
+181.                     right=0.9, 
+182.                     top=1.8, 
+183.                     wspace=0.4, 
+184.                     hspace=0.6)
+185. plt.show()
+186.  
+187. #SHOW TABULAR DATA
+188. #DISPLAY DATA OF INTEREST
+189. df1.head(12)
+190.  
+191. #SMOOTH ESTIMATE OF CDF
+192. fig = plt.figure(figsize=(12, 7))
+193. sns.kdeplot(data = y0, cumulative = True, label = "Average latency (microseconds)", color=col2)
+194. plt.grid(True, color ="grey", alpha=0.2)
+195. plt.legend()
+196. plt.show()
+197.  
+198. #CUMULTAIVE DISTRIBUTED FUNCTION (CFD)
+199. fig = plt.figure(figsize=(12, 7))
+200. sns.ecdfplot(data = y0, label="Average latency (microseconds)", color=col2)
+201. plt.grid(True, color ="grey", alpha=0.2)
+202. plt.legend()
+203. plt.show()
+204.  
+```
 
 <sub>[[Top 🢁](#contents)]</sub>
 
 ## Appendix F Java plugin implementation
+Can be found under `/java-plugin`.
 
-
+```bash
+ 1. /*
+ 2.  * Plugin architecture of
+ 3.  * vSOME/IP used for other
+ 4.  * middleware options.
+ 5.  *
+ 6.  * Code written based on the
+ 7.  * implementation of the Real-Time
+ 8.  * Innovations, Inc.
+ 9.  *
+10.  */
+11.  class TransportImpl {
+12.      public class IMessaging {
+13.          Object _vsomeip_requested_service_id;
+14.          boolean _use_TCP;
+15.          int getBatchSize(){return 0;};
+16.  
+17.          boolean support_listener(){
+18.              return true;
+19.          };
+20.  
+21.          boolean support_discovery(){
+22.              return true;
+23.          };
+24.  
+25.          void startvSomeIp(){
+26.  
+27.          };
+28.  
+29.          boolean isMulticast(){
+30.              return false;
+31.          }
+32.  
+33.          boolean use_TCP(){
+34.              return false;
+35.          }
+36.  
+37.          Object vSomeIP_offered_service_id(){
+38.              return _vsomeip_requested_service_id;
+39.          };
+40.  
+41.          Object vSomeIP_requested_service_id(){
+42.              return _vsomeip_requested_service_id;
+43.          };
+44.  
+45.          //Has to be change to "long"
+46.          Object vSomeIP_instance_id(){
+47.              return _vsomeip_requested_service_id;
+48.          };
+49.  
+50.          Object vsomeipApp(){
+51.              return _vsomeip_requested_service_id;
+52.          }
+53.  
+54.          void startvSomeIPThread(Object param){
+55.          };
+56.  
+57.      }
+58.  
+59.      private class SOMEIPTransportImpl {
+60.          long _vsomeip_mtu;
+61.          void test(){
+62.  
+63.          };
+64.          void on_message_2(Object std){
+65.              return;
+66.          }
+67.  
+68.      }
+69. }
+70.  
+```
 <sub>[[Top 🢁](#contents)]</sub>
 
 ## Appendix G Message exchange with RTI’s support team
+- [Link to forum exchange between author and RTI team.](https://community.rti.com/forum-topic/secure-option-java-build)
+
+<p align="center">
+<img src="img/Exchange1.png" height="130" style="border: 5px solid #181414"/>
+</p>
+
+<p align="center">
+<img src="img/Exchange2.png" height="120" style="border: 5px solid #181414"/>
+</p>
+
+<p align="center">
+<img src="img/Exchange3.png" height="120" style="border: 5px solid #181414"/>
+</p>
+
+<p align="center">
+<img src="img/Exchange4.png" height="310" style="border: 5px solid #181414"/>
+</p>
+
+
 
 
 <sub>[[Top 🢁](#contents)]</sub>
