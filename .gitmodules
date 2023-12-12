@@ -1,0 +1,6 @@
+[submodule "perftest-builds/build1/rtiperftest.gitgnore"]
+	path = perftest-builds/build1/rtiperftest.gitgnore
+	url = https://github.com/ArkadiusN/Experimental-Performance-Evaluation-of-DDS.git
+[submodule "perftest-builds/build2-final/rtiperftest.gitgnore"]
+	path = perftest-builds/build2-final/rtiperftest.gitgnore
+	url = https://github.com/ArkadiusN/Experimental-Performance-Evaluation-of-DDS.git
